@@ -212,7 +212,6 @@ export default function WarehouseStoragePage() {
         <section className="border-y border-slate-200 bg-white">
           <div className="mx-auto max-w-5xl px-4 py-6 flex flex-wrap justify-center gap-3 text-sm text-slate-600">
             {[
-              "⭐ 4.8/5 Trusted Reviews",
               "Secure Warehouse Storage",
               "Pickup & Delivery Included",
               "Flexible Monthly Plans",
