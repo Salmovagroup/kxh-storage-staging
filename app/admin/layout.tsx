@@ -38,6 +38,10 @@ function AdminNav() {
       href: "/admin/settings",
       label: "Settings",
     },
+    {
+      href: "/admin/invoices",
+      label: "Invoices",
+    }
   ];
 
   return (
