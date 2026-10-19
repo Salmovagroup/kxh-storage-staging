@@ -126,6 +126,9 @@ model Customer {
 
   orders              Order[]
   subscriptionInvoice SubscriptionInvoice[]
+  invoices            Invoice[]
+
+  billingAddress CustomerBillingAddress?
 }
 
 model AdminUser {
@@ -323,11 +326,11 @@ model Payment {
 }
 
 model TimeSlot {
-  id        String  @id @default(cuid())
-  name      String  @unique
-  startTime String?
-  endTime   String?
-  isActive  Boolean @default(true)
+  id          String       @id @default(cuid())
+  name        String       @unique
+  startTime   String?
+  endTime     String?
+  isActive    Boolean      @default(true)
   serviceType ServiceType?
 
   orders Order[]
@@ -568,4 +571,76 @@ model OrderInventoryItem {
   updatedAt DateTime @updatedAt
 
   @@index([orderId])
+}
+
+enum InvoiceStatus {
+  DRAFT
+  SENT
+  PAID
+  VOID
+}
+
+model Invoice {
+  id            String   @id @default(cuid())
+  invoiceNumber String   @unique
+  customerId    String
+  customer      Customer @relation(fields: [customerId], references: [id], onDelete: Restrict)
+
+  status   InvoiceStatus @default(DRAFT)
+  currency String        @default("GBP")
+
+  invoiceDate DateTime
+  dueDate     DateTime
+
+  subtotalMinor Int
+  taxPercent    Int @default(0)
+  taxMinor      Int @default(0)
+  totalMinor    Int
+
+  notes String?
+  terms String?
+
+  items InvoiceItem[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  paidAt    DateTime?
+  sentAt    DateTime?
+
+  @@index([customerId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model InvoiceItem {
+  id        String  @id @default(cuid())
+  invoiceId String
+  invoice   Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+
+  description    String
+  quantity       Int    @default(1)
+  unitPriceMinor Int
+  totalMinor     Int
+
+  @@index([invoiceId])
+}
+
+model InvoiceCounter {
+  id        String @id @default("default")
+  lastValue Int    @default(0)
+}
+
+model CustomerBillingAddress {
+  id         String   @id @default(cuid())
+  customerId String   @unique
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  line1      String
+  line2      String?
+  city       String
+  postalCode String
+  country    String  @default("GB")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
