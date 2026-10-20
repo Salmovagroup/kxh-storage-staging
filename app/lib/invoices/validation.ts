@@ -4,9 +4,7 @@ import { z } from "zod";
 export const invoiceSchema = z.object({
   invoiceNumber: z
     .string()
-    .trim()
-    .min(1, "Invoice number is required")
-    .max(50, "Invoice number is too long"),
+    .optional(),
   customerId: z.string().min(1),
 
   invoiceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),

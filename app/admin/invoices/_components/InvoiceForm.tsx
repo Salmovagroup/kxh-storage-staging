@@ -118,10 +118,10 @@ export default function InvoiceForm({
   function save() {
     setError("");
 
-    if (!form.invoiceNumber.trim()) {
-      setError("Please enter an invoice number.");
-      return;
-    }
+    // if (!form.invoiceNumber.trim()) {
+    //   setError("Please enter an invoice number.");
+    //   return;
+    // }
 
     if (!form.customerId.trim()) {
       setError("Please select a customer.");
@@ -232,7 +232,8 @@ export default function InvoiceForm({
                 placeholder="e.g. INV-0050"
                 maxLength={50}
                 required
-                readOnly={Boolean(invoice)}
+                readOnly={true}
+                
               />
 
               <span className="block text-xs font-normal text-slate-500">
@@ -556,7 +557,7 @@ export default function InvoiceForm({
           type="button"
           disabled={pending}
           onClick={save}
-          className="w-full rounded-xl border border-blue-700 bg-emerald-800 px-5 py-4 text-base font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+          className="w-full rounded-xl border border-blue-700 bg-emerald-800 px-5 py-4 text-base font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {pending
             ? "Saving..."

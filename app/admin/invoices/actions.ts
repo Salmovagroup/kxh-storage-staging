@@ -10,6 +10,7 @@ import {
 } from "@/app/lib/invoices/validation";
 import { invoicePdf } from "@/app/lib/invoices/pdf";
 import { money } from "@/app/lib/invoices/config";
+import { generateInvoiceNumber } from "@/app/lib/invoices/number";
 
 type Result = { success: true; id: string } | { success: false; error: string };
 const fail = (error: string): Result => ({ success: false, error });
@@ -21,51 +22,90 @@ function message(error: unknown) {
   if (error instanceof Error && error.name === "ZodError") return "Please check the invoice fields";
   return "Unable to complete invoice action";
 }
-export async function createInvoice(input: InvoiceInput): Promise<Result> {
+
+export async function createInvoice(
+  input: InvoiceInput
+): Promise<Result> {
   try {
     await assertInvoiceAdmin();
+
     const data = parseInvoice(input);
-    const customer = await prisma.customer.findUnique({ where: { id: data.customerId }, select: { id: true } });
-    if (!customer) return fail("Customer not found");
-    const invoice = await prisma.invoice.create({
-      data: {
-        invoiceNumber: data.invoiceNumber,
-        customerId: data.customerId,
-        invoiceDate: data.invoiceDate,
-        dueDate: data.dueDate,
 
-        subtotalMinor: data.subtotalMinor,
-        taxPercent: data.taxPercent,
-        taxMinor: data.taxMinor,
-        totalMinor: data.totalMinor,
-
-        notes: data.notes || null,
-        terms: data.terms || null,
-
-        items: {
-          create: data.items,
-        },
+    const customer = await prisma.customer.findUnique({
+      where: {
+        id: data.customerId,
       },
       select: {
         id: true,
       },
     });
 
+    if (!customer) {
+      return fail("Customer not found");
+    }
+
+    const invoice = await withTransactionRetry(() =>
+      prisma.$transaction(
+        async (tx) => {
+          // Generate a unique sequential invoice number.
+          const invoiceNumber =
+            await generateInvoiceNumber(tx);
+
+          // Create invoice and its items atomically.
+          return tx.invoice.create({
+            data: {
+              invoiceNumber,
+              customerId: data.customerId,
+              invoiceDate: data.invoiceDate,
+              dueDate: data.dueDate,
+
+              subtotalMinor: data.subtotalMinor,
+              taxPercent: data.taxPercent,
+              taxMinor: data.taxMinor,
+              totalMinor: data.totalMinor,
+
+              notes: data.notes || null,
+              terms: data.terms || null,
+
+              items: {
+                create: data.items,
+              },
+            },
+            select: {
+              id: true,
+              invoiceNumber: true,
+            },
+          });
+        },
+        {
+          isolationLevel:
+            Prisma.TransactionIsolationLevel.Serializable,
+        }
+      )
+    );
+
     revalidatePath("/admin/invoices");
-    return { success: true, id: invoice.id };
+
+    return {
+      success: true,
+      id: invoice.id,
+    };
   } catch (error) {
     if (
       error instanceof Prisma.PrismaClientKnownRequestError &&
       error.code === "P2002"
     ) {
       return fail(
-        "This invoice number already exists. Please enter another number."
+        "Invoice number conflict. Check the invoice counter and existing invoice numbers."
       );
     }
+
     console.error("[invoice create]", error);
+
     return fail(message(error));
   }
 }
+
 export async function updateInvoice(id: string, input: InvoiceInput): Promise<Result> {
   try {
     await assertInvoiceAdmin();
