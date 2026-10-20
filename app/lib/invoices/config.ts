@@ -2,7 +2,7 @@ export const INVOICE_BUSINESS = {
   name: "KXH Storage & Logistics",
   address: [
     "10 Northridge Road",
-    "Gravesend, DA12 5AZ",
+    "Gravesend, DA12 5AY",
     "United Kingdom",
   ],
 };

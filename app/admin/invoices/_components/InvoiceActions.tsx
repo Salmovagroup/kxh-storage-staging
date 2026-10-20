@@ -83,9 +83,9 @@ export default function InvoiceActions({
           action === "send"
             ? await sendInvoice(id)
             : await changeInvoiceStatus(
-                id,
-                action === "paid" ? "PAID" : "VOID"
-              );
+              id,
+              action === "paid" ? "PAID" : "VOID"
+            );
 
         if (!result.success) {
           setError(result.error);
