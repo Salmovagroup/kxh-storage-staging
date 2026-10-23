@@ -762,7 +762,7 @@ function HeroSection() {
 
                 <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
                     <Image
-                        src="/images/moving-services/moving-services-hero.webp"
+                        src="/images/kxh-moving-removals-london.webp"
                         alt="KXH home removals team collecting household furniture in London"
                         width={1400}
                         height={800}
