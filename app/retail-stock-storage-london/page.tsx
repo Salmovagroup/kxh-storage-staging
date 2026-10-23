@@ -1,3 +1,4 @@
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import { Shirt as HIcShirt, Store as HIcStore, Boxes as HIcBoxes, Megaphone as HIcMegaphone } from "lucide-react";
 import type { Metadata } from "next";
@@ -1268,7 +1269,7 @@ export default function RetailStockStoragePage() {
                             height={800}
                             quality={75}
                             sizes="(max-width: 1024px) 100vw, 50vw"
-                            className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+                            className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                         />
 
                         <div>
@@ -1697,10 +1698,11 @@ export default function RetailStockStoragePage() {
                             height={800}
                             quality={75}
                             sizes="(max-width: 1024px) 100vw, 50vw"
-                            className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+                            className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                             loading="lazy"
 
                         />
+
                     </div>
                 </section>
 
@@ -1911,21 +1913,19 @@ export default function RetailStockStoragePage() {
                     </div>
                 </section>
 
-                {/* TEAM IMAGE */}
-                <section className="border-t border-slate-200 bg-slate-50 py-16 lg:py-24">
-                    <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-                        <Image
-                            src="/images/new-van.webp"
-                            alt="KXH warehouse team supporting London retail stock storage"
-                            width={1200}
-                            height={800}
-                            quality={75}
-                            sizes="(max-width: 768px) 100vw, 960px"
-                            className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
-                        />
-                    </div>
-                </section>
-
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="Extra room for retail and seasonal stock"
+                    intro="Free up shop floor and back-room space. We collect surplus stock and return it when you need it on the shelves."
+                    points={["Overflow and seasonal stock", "Shop fittings and displays", "Collection from your store", "Return delivery"]}
+                    images={[
+                        { src: "/images/warehouse.webp", alt: "Stock and boxes stored on racking in the KXH London warehouse", label: "Inside our warehouse" },
+                        { src: "/images/kxh-collection-delivery-london.webp", alt: "Retail Stock Storage London with KXH Storage & Logistics", label: "Retail overflow" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=storage"
+                    ctaLabel="Get a Retail Storage Quote"
+                />
                 <TestimonialsSection />
 
                 {/* FINAL CTA */}
