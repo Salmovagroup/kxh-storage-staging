@@ -1,3 +1,4 @@
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import { Wine as HIcWine, Sofa as HIcSofa, Plane as HIcPlane, Package as HIcPackage } from "lucide-react";
 import type { Metadata } from "next";
@@ -923,7 +924,6 @@ function HeroSection() {
     );
 }
 
-
 function ParentServiceSection() {
     return (
         <section className="border-b border-slate-200 bg-white py-10 sm:py-12">
@@ -1100,13 +1100,13 @@ function ManagedPackingSection() {
         <section className="bg-slate-50 py-16 lg:py-24">
             <div className="mx-auto grid max-w-screen-xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
                 <Image
-                    src="/images/kxh-moving-removals-london.webp"
+                    src="/images/kxh-collection-delivery-london.webp"
                     alt="Office packing team labelling business cartons for a London relocation"
                     width={1200}
                     height={800}
                     quality={75}
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+                    className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                     loading="lazy"
                     decoding="async"
                 />
@@ -1204,17 +1204,6 @@ function UseCasesSection() {
     return (
         <section className="bg-slate-50 py-16 lg:py-24">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-                <Image
-                    src="/images/kxh-student-storage-london.webp"
-                    alt="Packed and labelled office boxes prepared for a London business move"
-                    width={1200}
-                    height={800}
-                    quality={75}
-                    sizes="(max-width: 768px) 100vw, 960px"
-                    className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
-                    loading="lazy"
-                    decoding="async"
-                />
 
                 <div className="mt-12">
                     <SectionHeading
@@ -1668,6 +1657,19 @@ export default function PackingServicesLondonPage() {
                 <CustomerFitSection />
                 <LondonCoverageSection />
                 <RelatedServicesSection />
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="Professional packing for every room"
+                    intro="Our team brings the materials and packs, wraps and labels everything so it arrives safely at your new place."
+                    points={["Fragile item protection", "Furniture wrapping", "Packing materials included", "Homes and offices"]}
+                    images={[
+                        { src: "/images/new-van.webp", alt: "KXH Storage & Logistics van outside a London apartment block", label: "Our own KXH vans" },
+                        { src: "/images/kxh-collection-delivery-london.webp", alt: "Packing Services London with KXH Storage & Logistics", label: "Packed and labelled" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=moving"
+                    ctaLabel="Get a Packing Quote"
+                />
                 <TestimonialsSection />
                 <FinalCtaSection />
                 <FaqSection />
