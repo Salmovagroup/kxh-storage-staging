@@ -99,6 +99,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/retail-storage-london",
+        destination: "/retail-stock-storage-london",
+        permanent: true,
+      },
+      {
         source: "/moving-storage-london",
         destination: "/moving-house-storage-london",
         permanent: true,
