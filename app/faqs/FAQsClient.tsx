@@ -133,10 +133,12 @@ export default function FAQsClient({ sections, serviceShortcuts, popularQuestion
                             Quick answers about storage, moving, collection, delivery, pricing and bookings across London.
                         </p>
 
-                        <div className="relative mx-auto mt-8 max-w-2xl">
+                        <div className="mx-auto mt-8 max-w-2xl">
                             <label htmlFor="faq-search" className="sr-only">Search frequently asked questions</label>
-                            <Search className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" aria-hidden="true" />
+                            <div className="relative">
+                            <Search className="pointer-events-none absolute left-5 top-1/2 z-10 h-5 w-5 -translate-y-1/2 text-slate-400" aria-hidden="true" />
                             <input
+                                style={{ paddingLeft: "3.25rem", paddingRight: "3rem", height: "3.75rem", borderRadius: "1rem" }}
                                 id="faq-search"
                                 type="search"
                                 value={query}
@@ -154,6 +156,7 @@ export default function FAQsClient({ sections, serviceShortcuts, popularQuestion
                                     <X className="h-4 w-4" />
                                 </button>
                             )}
+                            </div>
                             <p className="mt-3 text-sm text-slate-300" aria-live="polite">
                                 {query ? `${resultCount} ${resultCount === 1 ? "answer" : "answers"} found` : `Last updated ${lastUpdated} · Reviewed by the KXH team`}
                             </p>
