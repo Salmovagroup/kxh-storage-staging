@@ -7,6 +7,20 @@ import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import TestimonialsSection from "../components/TestimonialsSection";
 import Image from "next/image";
 import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Document Shredding London | Secure Collection | KXH",
+  description:
+    "Confidential document shredding in London. We collect paper records from homes and offices and securely destroy them. Book online or call 020 3916 5312.",
+  alternates: { canonical: "https://kxhlogistics.co.uk/shredding-solutions-london" },
+  openGraph: {
+    title: "Document Shredding London | KXH Storage & Logistics",
+    description: "Secure collection and confidential destruction of documents across London.",
+    url: "https://kxhlogistics.co.uk/shredding-solutions-london",
+    images: [{ url: "/images/kxh-shredding-solutions-london.webp", width: 1600, height: 900 }],
+  },
+};
 
 function JsonLd() {
   const data = {
