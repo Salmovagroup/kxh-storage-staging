@@ -1,3 +1,6 @@
+import ServiceHero from "../components/ServiceHero";
+import AreaMapExplorer from "../components/AreaMapExplorer";
+import { Package as HIcPackage, Armchair as HIcArmchair, GraduationCap as HIcGraduationCap, Boxes as HIcBoxes } from "lucide-react";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
@@ -9,9 +12,9 @@ import Image from "next/image";
 import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
 
 export const metadata = {
-  title: "Managed Warehouse Storage in London with Pickup & Delivery | KXH Logistics",
+  title: "Warehouse Storage London | Pickup & Delivery | KXH",
   description:
-    "Secure warehouse storage in London with pickup & delivery. Fully managed storage for businesses, students, renters, apartment moves, and individuals with flexible pricing.",
+    "Managed warehouse storage in London with collection from your door, secure storage and return delivery. For homes, students and businesses. Get a quote.",
   alternates: {
     canonical: "https://kxhlogistics.co.uk/warehouse-storage-london",
   },
@@ -160,53 +163,26 @@ export default function WarehouseStoragePage() {
         <FAQJsonLd />
         <BreadcrumbJsonLd />
         <TrustpilotJsonLd />
-        <section className="relative bg-gradient-to-b from-slate-50 to-white py-20 lg:py-28">
-          <div className="mx-auto max-w-5xl px-4 text-center">
-
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm font-semibold text-emerald-700">
-              <span className="h-2 w-2 rounded-full bg-emerald-500" />
-              Secure Warehouse Storage London
-            </div>
-
-            {/* Headline */}
-            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
-              Managed Warehouse Storage in London with Pickup & Delivery
-            </h1>
-
-            {/* Subtext */}
-            <p className="mt-5 text-lg text-slate-600 max-w-2xl mx-auto">
-              We collect your items, store them securely, and deliver them back when needed — ideal for businesses, students, renters, apartment moves, and temporary storage needs across London.            </p>
-
-            {/* CTA */}
-            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
-              <Link
-                href="/get-a-quote?service=storage"
-                className="rounded-xl bg-emerald-700 px-6 py-3 text-white font-semibold shadow-lg hover:bg-emerald-700 transition"
-              >
-                Get Quote
-              </Link>
-
-            </div>
-
-            {/* Trustpilot */}
-            <div className="mt-6 flex justify-center">
-              <TrustpilotPill />
-            </div>
-            <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
-              <Image
-                src="/images/kxh-collection-delivery-london.webp"
-                alt="Managed warehouse storage in London with pickup and delivery"
-                width={1400}
-                height={800}
-                priority
-                quality={80}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="h-auto w-full object-cover"
-              />
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+            image="/images/kxh-collection-delivery-london.webp"
+            imageAlt="Warehouse Storage London with Pickup & Delivery with KXH Storage & Logistics"
+            breadcrumb={[{"label": "Home", "href": "/"}, {"label": "Services", "href": "/services"}, {"label": "Warehouse Storage London"}]}
+            eyebrow="Managed warehouse storage"
+            title="Warehouse Storage London with Pickup & Delivery"
+            highlight="Pickup & Delivery"
+            intro="We collect your boxes, furniture or stock, keep them in our secure London warehouse and deliver them back when you need them. No van hire and no storage unit visits."
+            chips={["Collection from your door", "Secure managed warehouse", "Flexible monthly storage", "Return delivery on request"]}
+            ctaHref="/get-a-quote?service=storage"
+            ctaLabel="Get a Storage Quote"
+            cardEyebrow="We store"
+            cardTitle="Storage for homes and businesses"
+            cardItems={[
+                { icon: <HIcPackage className="h-6 w-6" aria-hidden="true" />, title: "Boxes", text: "Household and business boxes" },
+                { icon: <HIcArmchair className="h-6 w-6" aria-hidden="true" />, title: "Furniture", text: "Sofas, beds and tables" },
+                { icon: <HIcGraduationCap className="h-6 w-6" aria-hidden="true" />, title: "Student items", text: "Term-break storage" },
+                { icon: <HIcBoxes className="h-6 w-6" aria-hidden="true" />, title: "Business stock", text: "Stock and equipment" },
+            ]}
+        />
 
         {/* TRUST STRIP */}
         <section className="border-y border-slate-200 bg-white">
@@ -290,7 +266,7 @@ export default function WarehouseStoragePage() {
         <section className="pb-16 max-w-5xl mx-auto px-4">
           <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-lg">
             <Image
-              src="/images/warehouse-storage/inventory-management.webp"
+              src="/images/kxh-inventory-management-london.webp"
               alt="Inventory management warehouse storage"
               width={1200}
               height={700}
@@ -350,7 +326,7 @@ export default function WarehouseStoragePage() {
             </p>
             <div className="mt-10 overflow-hidden rounded-3xl border border-slate-200 shadow-lg">
               <Image
-                src="/images/warehouse-storage/student-storage.webp"
+                src="/images/kxh-student-storage-london.webp"
                 alt="Student storage and apartment relocation services"
                 width={1200}
                 height={700}
@@ -379,7 +355,7 @@ export default function WarehouseStoragePage() {
             </div>
             <div className="mb-10 overflow-hidden rounded-3xl border border-slate-200 shadow-lg">
               <Image
-                src="/images/warehouse-storage/business-storage.webp"
+                src="/images/kxh-business-storage-london.webp"
                 alt="Business inventory warehouse storage in London"
                 width={1200}
                 height={700}
@@ -392,7 +368,7 @@ export default function WarehouseStoragePage() {
 
               <Link
                 href="/business-storage-london"
-                className="rounded-2xl border border-slate-200 bg-white p-5 hover:border-emerald-300 transition"
+                className="kxh-reveal kxh-card3d rounded-3xl border border-slate-200 bg-white p-5 hover:border-emerald-300 transition"
               >
                 <h3 className="font-semibold text-slate-900">
                   Business Storage
@@ -405,7 +381,7 @@ export default function WarehouseStoragePage() {
 
               <Link
                 href="/inventory-management-london"
-                className="rounded-2xl border border-slate-200 bg-white p-5 hover:border-emerald-300 transition"
+                className="kxh-reveal kxh-card3d rounded-3xl border border-slate-200 bg-white p-5 hover:border-emerald-300 transition"
               >
                 <h3 className="font-semibold text-slate-900">
                   Inventory Management
@@ -418,7 +394,7 @@ export default function WarehouseStoragePage() {
 
               <Link
                 href="/pallet-storage-london"
-                className="rounded-2xl border border-slate-200 bg-white p-5 hover:border-emerald-300 transition"
+                className="kxh-reveal kxh-card3d rounded-3xl border border-slate-200 bg-white p-5 hover:border-emerald-300 transition"
               >
                 <h3 className="font-semibold text-slate-900">
                   Pallet Storage
@@ -431,7 +407,7 @@ export default function WarehouseStoragePage() {
 
               <Link
                 href="/commercial-storage-london"
-                className="rounded-2xl border border-slate-200 bg-white p-5 hover:border-emerald-300 transition"
+                className="kxh-reveal kxh-card3d rounded-3xl border border-slate-200 bg-white p-5 hover:border-emerald-300 transition"
               >
                 <h3 className="font-semibold text-slate-900">
                   Commercial Storage
@@ -443,7 +419,7 @@ export default function WarehouseStoragePage() {
               </Link>
               <Link
                 href="/third-party-logistics-london"
-                className="rounded-2xl border border-slate-200 bg-white p-5 hover:border-emerald-300 transition"
+                className="kxh-reveal kxh-card3d rounded-3xl border border-slate-200 bg-white p-5 hover:border-emerald-300 transition"
               >
                 <h3 className="font-semibold text-slate-900">
                   Third Party Logistics
@@ -502,7 +478,7 @@ export default function WarehouseStoragePage() {
         <section className="pb-16 max-w-5xl mx-auto px-4">
           <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-lg">
             <Image
-              src="/images/warehouse-storage/warehouse-team.webp"
+              src="/images/new-van.webp"
               alt="KXH Storage and Logistics warehouse team"
               width={1200}
               height={700}
@@ -512,7 +488,19 @@ export default function WarehouseStoragePage() {
             />
           </div>
         </section>
-        <TestimonialsSection />
+        <section id="areas" className="border-t border-slate-200/70 bg-slate-50 py-16 lg:py-24">
+                    <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+                        <div className="kxh-reveal max-w-3xl">
+                            <p className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">London service areas</p>
+                            <h2 className="mt-4 text-3xl font-black text-slate-950 sm:text-4xl">Warehouse Storage London across London boroughs</h2>
+                            <p className="mt-4 text-slate-600">Tap an area to see it on the map and open the local warehouse storage page.</p>
+                        </div>
+                        <div className="mt-10">
+                            <AreaMapExplorer primaryHref="/warehouse-storage-london" />
+                        </div>
+                    </div>
+                </section>
+                <TestimonialsSection />
         {/* CTA */}
         <section className="py-20 text-center bg-slate-50">
           <h2 className="text-3xl font-bold">
