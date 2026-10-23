@@ -1,5 +1,6 @@
 // app/third-party-logistics-london/page.tsx
 
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import AreaMapExplorer from "../components/AreaMapExplorer";
 import { Warehouse as HIcWarehouse, ScanLine as HIcScanLine, PackageCheck as HIcPackageCheck, Truck as HIcTruck } from "lucide-react";
@@ -329,13 +330,27 @@ export default function ThirdPartyLogisticsPage() {
                                     alt="KXH Storage and Logistics warehouse team in London"
                                     width={900}
                                     height={600}
-                                    className="h-auto w-full object-cover"
+                                    className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                                 />
+
                             </div>
                         </div>
                     </div>
                 </section>
 
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="3PL support from shelf to door"
+                    intro="Store your stock with us and let our team handle picking, packing coordination and delivery across London."
+                    points={["Warehouse storage", "Inventory handling", "Delivery coordination", "Flexible capacity"]}
+                    images={[
+                        { src: "/images/warehouse.webp", alt: "Stock and boxes stored on racking in the KXH London warehouse", label: "Inside our warehouse" },
+                        { src: "/images/kxh-collection-delivery-london.webp", alt: "Third Party Logistics London with KXH Storage & Logistics", label: "Fulfilment ready" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=storage"
+                    ctaLabel="Get a 3PL Quote"
+                />
                 <section id="areas" className="border-t border-slate-200/70 bg-slate-50 py-16 lg:py-24">
                     <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                         <div className="kxh-reveal max-w-3xl">
