@@ -55,7 +55,9 @@ function useTilt(max = 7) {
 /** Dark cover hero used on service pages (same look as the homepage cover). */
 export default function ServiceHero(p: Props) {
     const tiltRef = useTilt();
-    const titleMain = p.highlight ? p.title.replace(p.highlight, "") : p.title;
+    const hiAt = p.highlight ? p.title.indexOf(p.highlight) : -1;
+    const before = hiAt >= 0 ? p.title.slice(0, hiAt) : p.title;
+    const after = hiAt >= 0 && p.highlight ? p.title.slice(hiAt + p.highlight.length) : "";
 
     return (
         <section className="kxh-hero relative isolate overflow-hidden bg-slate-950 text-white">
@@ -89,10 +91,11 @@ export default function ServiceHero(p: Props) {
                             {p.eyebrow}
                         </p>
                         <h1 className="mt-6 text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-                            {titleMain}
-                            {p.highlight && (
+                            {before}
+                            {hiAt >= 0 && (
                                 <span className="bg-gradient-to-r from-emerald-300 to-lime-200 bg-clip-text text-transparent">{p.highlight}</span>
                             )}
+                            {after}
                         </h1>
                         <p className="mt-5 max-w-xl text-base leading-7 text-slate-200 sm:text-lg">{p.intro}</p>
 
