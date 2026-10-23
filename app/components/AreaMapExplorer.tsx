@@ -39,8 +39,10 @@ function mapSrc(area: Area) {
     return `https://maps.google.com/maps?q=${q}&z=13&output=embed`;
 }
 
-export default function AreaMapExplorer() {
+export default function AreaMapExplorer({ primaryHref }: { primaryHref?: string } = {}) {
     const [active, setActive] = useState<Area | null>(null);
+    const primary = AREA_SERVICES.find((s) => s.href === primaryHref);
+    const services = primary ? [primary, ...AREA_SERVICES.filter((s) => s !== primary)] : AREA_SERVICES;
     const closeRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
@@ -122,7 +124,7 @@ export default function AreaMapExplorer() {
                             </p>
                             <p className="mt-5 text-xs font-bold uppercase tracking-[0.18em] text-slate-400">Services in {active.name}</p>
                             <ul className="mt-3 grid grid-cols-1 gap-1.5 sm:grid-cols-2 lg:grid-cols-1">
-                                {AREA_SERVICES.map((s) => (
+                                {services.map((s) => (
                                     <li key={s.href}>
                                         <Link
                                             href={`${s.href}/${active.slug}`}
@@ -134,9 +136,17 @@ export default function AreaMapExplorer() {
                                     </li>
                                 ))}
                             </ul>
+                            {primary && (
+                                <Link
+                                    href={`${primary.href}/${active.slug}`}
+                                    className="mt-5 flex items-center justify-center gap-2 rounded-2xl border border-emerald-200 bg-emerald-50 px-5 py-3.5 text-sm font-bold text-emerald-800 transition hover:bg-emerald-100"
+                                >
+                                    {primary.label} in {active.name} <ArrowRight className="h-4 w-4" />
+                                </Link>
+                            )}
                             <Link
                                 href="/get-a-quote"
-                                className="kxh-shine relative mt-5 flex items-center justify-center gap-2 overflow-hidden rounded-2xl bg-emerald-700 px-5 py-3.5 text-sm font-bold text-white transition hover:bg-emerald-800"
+                                className="kxh-shine relative mt-3 flex items-center justify-center gap-2 overflow-hidden rounded-2xl bg-emerald-700 px-5 py-3.5 text-sm font-bold text-white transition hover:bg-emerald-800"
                             >
                                 Get a quote for {active.name} <ArrowRight className="h-4 w-4" />
                             </Link>
