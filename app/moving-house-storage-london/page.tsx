@@ -11,7 +11,7 @@ import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import { londonLocations } from "../lib/location";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
-const pageUrl = "https://kxhlogistics.co.uk/moving-storage-london";
+const pageUrl = "https://kxhlogistics.co.uk/moving-house-storage-london";
 const quoteUrl = "/get-a-quote?service=storage";
 
 export const metadata: Metadata = {
@@ -519,7 +519,7 @@ function ServiceJsonLd() {
             "@id": "https://kxhlogistics.co.uk/#business",
             name: "KXH Storage & Logistics",
             url: "https://kxhlogistics.co.uk",
-            telephone: "+44 7386 277785",
+            telephone: "+44 20 3916 5312",
         },
         areaServed: {
             "@type": "City",
