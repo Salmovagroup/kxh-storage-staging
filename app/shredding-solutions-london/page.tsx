@@ -170,16 +170,6 @@ export default function ShreddingServicePage() {
       <CrispChat />
       <Nav />
 
-      <nav className="max-w-screen-xl mx-auto px-4 pt-6 text-sm text-slate-500">
-        <Link href="/">Home</Link>
-        <span className="mx-2">/</span>
-        <Link href="/services">Services</Link>
-        <span className="mx-2">/</span>
-        <span className="text-slate-700 font-medium">
-          Document Shredding London
-        </span>
-      </nav>
-
       <main className="min-h-screen bg-white text-slate-900">
         <JsonLd />
         <FAQJsonLd />
