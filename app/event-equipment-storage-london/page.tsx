@@ -1,3 +1,4 @@
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import { Presentation as HIcPresentation, Speaker as HIcSpeaker, Armchair as HIcArmchair, Megaphone as HIcMegaphone } from "lucide-react";
 import type { Metadata } from "next";
@@ -1251,7 +1252,7 @@ function ManagedStorageSection() {
                     height={800}
                     quality={75}
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+                    className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                     loading="lazy"
                     decoding="async"
                 />
@@ -1383,17 +1384,6 @@ function UseCasesSection() {
     return (
         <section className="bg-slate-50 py-16 lg:py-24">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-                <Image
-                    src="/images/kxh-inventory-management-london.webp"
-                    alt="Event equipment loaded for delivery to a London exhibition venue"
-                    width={1200}
-                    height={800}
-                    quality={75}
-                    sizes="(max-width: 768px) 100vw, 960px"
-                    className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
-                    loading="lazy"
-                    decoding="async"
-                />
 
                 <div className="mt-12">
                     <SectionHeading
@@ -2015,6 +2005,19 @@ export default function EventEquipmentStorageLondonPage() {
                 <CustomerFitSection />
                 <LondonCoverageSection />
                 <RelatedServicesSection />
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="Event kit ready for the next show"
+                    intro="Stands, displays and flight cases are stored safely between events and delivered to your venue on time."
+                    points={["Collection after events", "Delivery to venues", "Stands, AV and furniture", "Flexible storage"]}
+                    images={[
+                        { src: "/images/warehouse.webp", alt: "Stock and boxes stored on racking in the KXH London warehouse", label: "Inside our warehouse" },
+                        { src: "/images/kxh-collection-delivery-london.webp", alt: "Event Equipment Storage London with KXH Storage & Logistics", label: "Event equipment" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=storage"
+                    ctaLabel="Get an Event Storage Quote"
+                />
                 <TestimonialsSection />
                 <FinalCtaSection />
                 <FaqSection />
