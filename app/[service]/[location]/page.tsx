@@ -749,14 +749,14 @@ const boroughContent: Record<string, Partial<Record<ServiceSlug, BoroughContent>
 };
 
 const serviceImages = {
-    "warehouse-storage-london": "/images/location-service/warehouse-storage-location.webp",
-    "business-storage-london": "/images/location-service/business-storage-location.webp",
-    "inventory-management-london": "/images/location-service/inventory-management-location.webp",
-    "pallet-storage-london": "/images/location-service/pallet-storage-location.webp",
-    "commercial-storage-london": "/images/location-service/business-storage-location.webp",
-    "third-party-logistics-london": "/images/location-service/third-party-logistics-location.webp",
-    "logistics-moving-london": "/images/location-service/moving-services-location.webp",
-    "shredding-solutions-london": "/images/location-service/document-shredding-location.webp",
+    "warehouse-storage-london": "/images/kxh-home-hero-warehouse-london.webp",
+    "business-storage-london": "/images/kxh-business-storage-london.webp",
+    "inventory-management-london": "/images/kxh-inventory-management-london.webp",
+    "pallet-storage-london": "/images/kxh-pallet-storage-london.webp",
+    "commercial-storage-london": "/images/kxh-business-storage-london.webp",
+    "third-party-logistics-london": "/images/kxh-third-party-logistics-london.webp",
+    "logistics-moving-london": "/images/kxh-moving-removals-london.webp",
+    "shredding-solutions-london": "/images/kxh-shredding-solutions-london.webp",
 };
 
 
@@ -836,14 +836,14 @@ const businessStorageIndustries = [
 
 function getSupportImage(service: ServiceSlug) {
     const images: Record<ServiceSlug, string> = {
-        "warehouse-storage-london": "/images/location-service/warehouse-storage-location.webp",
-        "business-storage-london": "/images/location-service/location-business-support.webp",
-        "inventory-management-london": "/images/location-service/inventory-management-location.webp",
-        "pallet-storage-london": "/images/location-service/pallet-storage-location.webp",
-        "commercial-storage-london": "/images/location-service/commercial-storage-location.webp",
-        "third-party-logistics-london": "/images/location-service/third-party-logistics-location.webp",
-        "logistics-moving-london": "/images/location-service/moving-services-location.webp",
-        "shredding-solutions-london": "/images/location-service/document-shredding-location.webp",
+        "warehouse-storage-london": "/images/kxh-home-hero-warehouse-london.webp",
+        "business-storage-london": "/images/kxh-business-storage-london.webp",
+        "inventory-management-london": "/images/kxh-inventory-management-london.webp",
+        "pallet-storage-london": "/images/kxh-pallet-storage-london.webp",
+        "commercial-storage-london": "/images/kxh-commercial-storage-london.webp",
+        "third-party-logistics-london": "/images/kxh-third-party-logistics-london.webp",
+        "logistics-moving-london": "/images/kxh-moving-removals-london.webp",
+        "shredding-solutions-london": "/images/kxh-shredding-solutions-london.webp",
     };
 
     return images[service];
@@ -1273,7 +1273,7 @@ function BusinessIndustrySection({ location }: { location: LocationItem }) {
 
 function TeamSection({ location, content }: Omit<SectionProps, "service">) {
     return (
-        <section className="bg-white py-16 lg:py-20" aria-labelledby="team-title"><div className="mx-auto max-w-6xl px-4"><div className="grid gap-10 lg:grid-cols-2 lg:items-center"><Image src="/images/location-service/location-team-photo.webp" alt={`KXH Storage & Logistics operations team serving ${location.name}`} width={1400} height={800} loading="lazy" sizes="(min-width: 1024px) 50vw, 100vw" className="aspect-[7/4] w-full rounded-3xl object-cover shadow-xl" /><div><p className="text-sm font-bold uppercase tracking-wider text-emerald-700">Operational trust</p><h2 id="team-title" className="mt-3 text-3xl font-black sm:text-4xl">A Team That Manages the Details</h2><p className="mt-5 leading-7 text-slate-600">From collection planning to careful handling and delivery coordination, the KXH team supports each stage of your {content.label.toLowerCase()} service in {location.name}.</p><ul className="mt-6 space-y-3 text-slate-700"><li className="flex gap-3"><span aria-hidden="true" className="font-bold text-emerald-700">✓</span>Professional collection and handling</li><li className="flex gap-3"><span aria-hidden="true" className="font-bold text-emerald-700">✓</span>Clear communication throughout the service</li><li className="flex gap-3"><span aria-hidden="true" className="font-bold text-emerald-700">✓</span>Flexible support for changing requirements</li></ul></div></div></div></section>
+        <section className="bg-white py-16 lg:py-20" aria-labelledby="team-title"><div className="mx-auto max-w-6xl px-4"><div className="grid gap-10 lg:grid-cols-2 lg:items-center"><Image src="/images/new-van.webp" alt={`KXH Storage & Logistics operations team serving ${location.name}`} width={1400} height={800} loading="lazy" sizes="(min-width: 1024px) 50vw, 100vw" className="aspect-[7/4] w-full rounded-3xl object-cover shadow-xl" /><div><p className="text-sm font-bold uppercase tracking-wider text-emerald-700">Operational trust</p><h2 id="team-title" className="mt-3 text-3xl font-black sm:text-4xl">A Team That Manages the Details</h2><p className="mt-5 leading-7 text-slate-600">From collection planning to careful handling and delivery coordination, the KXH team supports each stage of your {content.label.toLowerCase()} service in {location.name}.</p><ul className="mt-6 space-y-3 text-slate-700"><li className="flex gap-3"><span aria-hidden="true" className="font-bold text-emerald-700">✓</span>Professional collection and handling</li><li className="flex gap-3"><span aria-hidden="true" className="font-bold text-emerald-700">✓</span>Clear communication throughout the service</li><li className="flex gap-3"><span aria-hidden="true" className="font-bold text-emerald-700">✓</span>Flexible support for changing requirements</li></ul></div></div></div></section>
     );
 }
 
