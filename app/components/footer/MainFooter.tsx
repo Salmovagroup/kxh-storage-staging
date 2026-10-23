@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
-import FloatingTrustpilot from "../trustpilot/FloatingTrustpilot";
 import SocialLinks from "../SocialLinks";
 import { CONTACT_NUMBERS } from "@/app/lib/contact";
 
@@ -208,8 +207,35 @@ export default function MainFooter({
           </div>
         )}
 
-        <div className="mt-12 flex justify-center rounded-2xl bg-white px-5 py-4">
-          <FloatingTrustpilot />
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-5 text-center sm:flex-row sm:text-left">
+          <div className="flex items-center gap-3">
+            <span className="flex" aria-hidden="true">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <span key={i} className="mr-0.5 grid h-6 w-6 place-items-center bg-[#00b67a] text-sm leading-none text-white">★</span>
+              ))}
+            </span>
+            <p className="text-sm text-slate-300">
+              <span className="font-bold text-white">Rated 4.8 on Trustpilot</span> by our London customers
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-2">
+            <a
+              href="https://www.trustpilot.com/review/kxhlogistics.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Read reviews
+            </a>
+            <a
+              href="https://www.trustpilot.com/evaluate/kxhlogistics.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl bg-[#00b67a] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#00a36d]"
+            >
+              Write a review
+            </a>
+          </div>
         </div>
       </div>
 
