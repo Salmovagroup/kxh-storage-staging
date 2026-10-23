@@ -1,5 +1,4 @@
 import { Quote, Star } from "lucide-react";
-import FloatingTrustpilot from "./trustpilot/FloatingTrustpilot";
 
 type Testimonial = {
     name: string;
@@ -118,8 +117,23 @@ export default function TestimonialsSection() {
                     ))}
                 </div>
 
-                <div className="mt-10 flex justify-center">
-                    <FloatingTrustpilot />
+                <div className="mt-10 flex flex-wrap justify-center gap-3">
+                    <a
+                        href="https://www.trustpilot.com/review/kxhlogistics.co.uk"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-900 transition hover:border-[#00b67a] hover:text-[#00845a]"
+                    >
+                        <span className="text-[#00b67a]" aria-hidden="true">★</span> Read all reviews on Trustpilot
+                    </a>
+                    <a
+                        href="https://www.trustpilot.com/evaluate/kxhlogistics.co.uk"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center rounded-xl bg-[#00b67a] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#00a36d]"
+                    >
+                        Write a review
+                    </a>
                 </div>
             </div>
         </section>
