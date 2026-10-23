@@ -195,7 +195,7 @@ export default function WarehouseStoragePage() {
             </div>
             <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
               <Image
-                src="/images/warehouse-storage/warehouse-hero.webp"
+                src="/images/kxh-collection-delivery-london.webp"
                 alt="Managed warehouse storage in London with pickup and delivery"
                 width={1400}
                 height={800}
