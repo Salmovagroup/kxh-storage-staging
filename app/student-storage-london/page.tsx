@@ -31,7 +31,7 @@ function JsonLd() {
             "@type": "LocalBusiness",
             name: "KXH Storage & Logistics",
             url: "https://kxhlogistics.co.uk",
-            telephone: "+44 1474 396663",
+            telephone: "+44 20 3916 5312",
         },
         description:
             "Student storage in London with collection, secure warehouse storage and return delivery for university students, summer storage, accommodation moves and temporary storage between terms.",
