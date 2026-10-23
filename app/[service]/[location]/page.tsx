@@ -1043,7 +1043,7 @@ function StructuredData({ service, location, content }: SectionProps) {
             "@type": "LocalBusiness",
             name: "KXH Storage & Logistics",
             url: SITE_URL,
-            telephone: "+44 1474 396663",
+            telephone: "+44 20 3916 5312",
         },
     };
     const faqSchema = {
