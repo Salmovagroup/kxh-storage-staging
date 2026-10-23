@@ -1,5 +1,7 @@
 // app/student-storage-london/page.tsx
 
+import ServiceHero from "../components/ServiceHero";
+import { Sun as HIcSun, Building2 as HIcBuilding2, Luggage as HIcLuggage, Truck as HIcTruck } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
@@ -12,9 +14,9 @@ import { londonLocations } from "../lib/location";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-    title: "Student Storage London | Collection, Storage & Delivery",
+    title: "Student Storage London | Collection & Delivery | KXH",
     description:
-        "Student storage in London with collection, secure warehouse storage and return delivery. Ideal for summer storage, university accommodation moves, term breaks and temporary student storage.",
+    "Student storage in London with collection from halls, flats and shared houses. Store over summer or between terms and get it delivered back. Get a quote.",
     alternates: {
         canonical: "https://kxhlogistics.co.uk/student-storage-london",
     },
@@ -113,63 +115,31 @@ export default function StudentStoragePage() {
                 <FAQJsonLd />
                 <TrustpilotJsonLd />
 
-                <section className="relative bg-gradient-to-b from-slate-50 to-white py-20 lg:py-28">
-                    <div className="max-w-5xl mx-auto px-4 text-center">
-                        <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm font-semibold text-emerald-700">
-                            <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                            Trusted Student Storage Across London
-                        </div>
-
-                        <h1 className="mt-6 text-4xl font-black sm:text-5xl lg:text-6xl leading-tight tracking-tight">
-                            Affordable Student Storage London
-                        </h1>
-
-                        <p className="mt-5 text-lg text-slate-600 max-w-2xl mx-auto">
-                            Affordable Student storage in London with collection, secure warehouse
-                            storage and return delivery. Ideal for university students moving
-                            between accommodation, returning home during summer, studying
-                            abroad, or needing temporary storage between terms.
-                        </p>
-
-                        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
-                            <Link
-                                href="/get-a-quote?service=storage"
-                                className="rounded-xl bg-emerald-700 px-6 py-3 text-white font-semibold shadow-lg hover:bg-emerald-800 transition"
-                            >
-                                Get Student Storage Quote
-                            </Link>
-
-                            <Link
-                                href="/logistics-moving-london"
-                                className="rounded-xl border border-slate-200 px-6 py-3 font-semibold text-slate-700 hover:bg-slate-50 transition"
-                            >
-                                Student Moving Support
-                            </Link>
-                        </div>
-
-                        <div className="mt-6 flex justify-center">
-                            <TrustpilotPill />
-                        </div>
-
-                        <div className="mt-12">
-                            <Image
-                                src="/images/kxh-student-storage-london.webp"
-                                alt="Student storage with collection and delivery in London"
-                                className="w-full rounded-3xl border border-slate-200 shadow-xl"
-                                width={1200}
-                                height={800}
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        </div>
-                    </div>
-                </section>
+                <ServiceHero
+                    image="/images/kxh-student-storage-london.webp"
+                    imageAlt="Student Storage London with Collection & Delivery with KXH Storage & Logistics"
+                    breadcrumb={[{"label": "Home", "href": "/"}, {"label": "Services", "href": "/services"}, {"label": "Student Storage London"}]}
+                    eyebrow="Storage for students"
+                    title="Student Storage London with Collection & Delivery"
+                    highlight="Collection & Delivery"
+                    intro="Summer, term-break and between-tenancy storage for London students. We collect from your halls, flat or shared house, store your things safely and bring them back when term starts."
+                    chips={["Collection from halls and flats", "Summer and term-break storage", "Pay only for what you store", "Delivery to your new address"]}
+                    ctaHref="/get-a-quote?service=storage"
+                    ctaLabel="Get a Student Storage Quote"
+                    cardEyebrow="Perfect for"
+                    cardTitle="Every student move"
+                    cardItems={[
+                        { icon: <HIcSun className="h-6 w-6" aria-hidden="true" />, title: "Summer break", text: "Store until September" },
+                        { icon: <HIcBuilding2 className="h-6 w-6" aria-hidden="true" />, title: "Halls moves", text: "Halls to private flats" },
+                        { icon: <HIcLuggage className="h-6 w-6" aria-hidden="true" />, title: "Suitcases", text: "Bags, boxes and bikes" },
+                        { icon: <HIcTruck className="h-6 w-6" aria-hidden="true" />, title: "Delivery", text: "Back to your new place" },
+                    ]}
+                />
 
                 <section className="py-16 bg-white border-t border-slate-200/70">
-                    <div className="max-w-6xl mx-auto px-4">
+                    <div className="max-w-screen-xl mx-auto px-4">
                         <div className="text-center max-w-3xl mx-auto">
-                            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                            <p className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">
                                 How It Works
                             </p>
                             <h2 className="mt-2 text-3xl font-black">
@@ -201,7 +171,7 @@ export default function StudentStoragePage() {
                             ].map((item) => (
                                 <div
                                     key={item.title}
-                                    className="rounded-2xl border border-slate-200 bg-slate-50 p-6"
+                                    className="kxh-reveal kxh-card3d rounded-3xl border border-slate-200 bg-slate-50 p-6"
                                 >
                                     <div className="text-3xl font-black text-emerald-700">
                                         {item.step}
@@ -213,7 +183,7 @@ export default function StudentStoragePage() {
                         </div>
                         <div className="mt-12">
                             <Image
-                                src="/images/student-storage-london/student-storage-collection.webp"
+                                src="/images/kxh-student-storage-london.webp"
                                 alt="Student storage collection from university accommodation in London"
                                 className="w-full rounded-3xl border border-slate-200 shadow-xl object-cover"
                                 width={1200}
@@ -242,7 +212,7 @@ export default function StudentStoragePage() {
                     </div>
                 </section>
 
-                <section className="py-20 max-w-6xl mx-auto px-4">
+                <section className="py-20 max-w-screen-xl mx-auto px-4">
                     <div className="grid lg:grid-cols-2 gap-12 items-start">
                         <div>
                             <h2 className="text-3xl font-black">
@@ -263,7 +233,7 @@ export default function StudentStoragePage() {
                             </p>
                         </div>
 
-                        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                        <div className="kxh-reveal kxh-card3d rounded-3xl border border-slate-200 bg-slate-50 p-6">
                             <h3 className="font-bold text-lg">Useful for:</h3>
 
                             <ul className="mt-4 space-y-3 text-slate-700">
@@ -279,7 +249,7 @@ export default function StudentStoragePage() {
                 </section>
 
                 <section className="py-16 bg-slate-50 border-t border-slate-200/70">
-                    <div className="max-w-6xl mx-auto px-4">
+                    <div className="max-w-screen-xl mx-auto px-4">
                         <div className="grid lg:grid-cols-2 gap-8">
                             <div className="rounded-3xl border border-red-100 bg-red-50 p-8">
                                 <h2 className="text-2xl font-black text-slate-900">
@@ -309,11 +279,11 @@ export default function StudentStoragePage() {
                 </section>
 
                 <section className="py-16 bg-white border-t border-slate-200/70">
-                    <div className="max-w-6xl mx-auto px-4">
+                    <div className="max-w-screen-xl mx-auto px-4">
                         <div className="grid lg:grid-cols-2 gap-12 items-start">
                             <div>
                                 <Image
-                                    src="/images/student-storage-london/summer-student-storage.webp"
+                                    src="/images/kxh-student-storage-london.webp"
                                     alt="University student leaving accommodation for summer storage in London"
                                     className="w-full rounded-3xl border border-slate-200 shadow-xl object-cover h-auto"
                                     width={1200}
@@ -324,7 +294,7 @@ export default function StudentStoragePage() {
                                 />
                             </div>
                             <div>
-                                <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                                <p className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">
                                     Summer Student Storage
                                 </p>
                                 <h2 className="mt-2 text-3xl font-black">
@@ -342,7 +312,7 @@ export default function StudentStoragePage() {
                                 </p>
                             </div>
 
-                            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                            <div className="kxh-reveal kxh-card3d rounded-3xl border border-slate-200 bg-slate-50 p-6">
                                 <h3 className="font-bold text-lg">Perfect for:</h3>
                                 <ul className="mt-4 space-y-3 text-slate-700">
                                     <li>✔ End-of-term move-outs</li>
@@ -361,7 +331,7 @@ export default function StudentStoragePage() {
                         <div className="grid lg:grid-cols-2 gap-12 items-start">
                             <div className="lg:sticky lg:top-24">
                                 <Image
-                                    src="/images/student-storage-london/university-student-storage.webp"
+                                    src="/images/kxh-student-storage-london.webp"
                                     alt="University students using KXH Storage & Logistics collection service in London"
                                     className="w-full rounded-3xl border border-slate-200 shadow-xl object-cover h-auto"
                                     width={1200}
@@ -373,7 +343,7 @@ export default function StudentStoragePage() {
                             </div>
 
                             <div>
-                                <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                                <p className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">
                                     Universities We Support
                                 </p>
 
@@ -403,7 +373,7 @@ export default function StudentStoragePage() {
                                     ].map((school) => (
                                         <div
                                             key={school}
-                                            className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+                                            className="kxh-reveal kxh-card3d rounded-3xl border border-slate-200 bg-white p-4 shadow-sm"
                                         >
                                             <h3 className="font-semibold text-slate-900">{school}</h3>
                                             <p className="mt-2 text-sm text-slate-600">
@@ -418,7 +388,7 @@ export default function StudentStoragePage() {
                 </section>
 
                 <section className="py-16 bg-white border-t border-slate-200/70">
-                    <div className="max-w-6xl mx-auto px-4">
+                    <div className="max-w-screen-xl mx-auto px-4">
                         <div className="text-center max-w-3xl mx-auto">
                             <h2 className="text-3xl font-black">
                                 Who Uses Our Student Storage?
@@ -458,7 +428,7 @@ export default function StudentStoragePage() {
                             ].map((item) => (
                                 <div
                                     key={item.title}
-                                    className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
+                                    className="kxh-reveal kxh-card3d rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
                                 >
                                     <h3 className="font-bold text-lg">{item.title}</h3>
                                     <p className="mt-3 text-slate-600">{item.desc}</p>
@@ -469,10 +439,10 @@ export default function StudentStoragePage() {
                 </section>
 
                 <section className="py-16 bg-slate-50 border-t border-slate-200/70">
-                    <div className="max-w-6xl mx-auto px-4">
+                    <div className="max-w-screen-xl mx-auto px-4">
                         <div className="grid lg:grid-cols-2 gap-12 items-center">
                             <div>
-                                <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                                <p className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">
                                     Student Moving Support
                                 </p>
 
@@ -509,7 +479,7 @@ export default function StudentStoragePage() {
 
                             <div>
                                 <Image
-                                    src="/images/student-storage-london/student-moving.webp"
+                                    src="/images/kxh-student-storage-london.webp"
                                     alt="Student moving service London"
                                     className="w-full rounded-3xl border border-slate-200 shadow-xl object-cover h-auto"
                                     width={1200}
@@ -524,9 +494,9 @@ export default function StudentStoragePage() {
                 </section>
 
                 <section className="py-16 bg-white border-t border-slate-200/70">
-                    <div className="max-w-6xl mx-auto px-4">
+                    <div className="max-w-screen-xl mx-auto px-4">
                         <div className="text-center max-w-3xl mx-auto">
-                            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                            <p className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">
                                 Areas We Serve
                             </p>
                             <h2 className="text-3xl font-black">
@@ -551,7 +521,7 @@ export default function StudentStoragePage() {
                                 <Link
                                     key={area.href}
                                     href={area.href}
-                                    className="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-emerald-300 hover:bg-white transition"
+                                    className="kxh-reveal kxh-card3d rounded-3xl border border-slate-200 bg-slate-50 p-5 hover:border-emerald-300 hover:bg-white transition"
                                 >
                                     <h3 className="font-semibold text-slate-900">
                                         Student Storage in {area.name}
@@ -604,7 +574,7 @@ export default function StudentStoragePage() {
                                 <Link
                                     key={`${item.href}-${index}`}
                                     href={item.href}
-                                    className="rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:border-emerald-300 transition"
+                                    className="kxh-reveal kxh-card3d rounded-3xl border border-slate-200 bg-slate-50 p-5 hover:border-emerald-300 transition"
                                 >
                                     <h3 className="font-semibold">{item.title}</h3>
                                     <p className="mt-2 text-sm text-slate-600">{item.desc}</p>
