@@ -1,3 +1,4 @@
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import { Sofa as HIcSofa, BedDouble as HIcBedDouble, Armchair as HIcArmchair, Building2 as HIcBuilding2 } from "lucide-react";
 import type { Metadata } from "next";
@@ -1111,13 +1112,13 @@ function ManagedStorageSection() {
         <section className="bg-slate-50 py-16 lg:py-24">
             <div className="mx-auto grid max-w-screen-xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
                 <Image
-                    src="/images/kxh-collection-delivery-london.webp"
+                    src="/images/kxh-inventory-management-london.webp"
                     alt="Office and commercial furniture arranged inside a London warehouse"
                     width={1200}
                     height={800}
                     quality={75}
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+                    className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                     loading="lazy"
                     decoding="async"
                 />
@@ -1229,17 +1230,6 @@ function UseCasesSection() {
     return (
         <section className="bg-slate-50 py-16 lg:py-24">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-                <Image
-                    src="/images/kxh-inventory-management-london.webp"
-                    alt="KXH team handling business furniture for collection and storage in London"
-                    width={1200}
-                    height={800}
-                    quality={75}
-                    sizes="(max-width: 768px) 100vw, 960px"
-                    className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
-                    loading="lazy"
-                    decoding="async"
-                />
 
                 <div className="mt-12">
                     <SectionHeading
@@ -1784,6 +1774,19 @@ export default function FurnitureStorageLondonPage() {
                 <LondonCoverageSection />
                 <RelatedServicesSection />
                 <TestimonialsWrapper />
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="Furniture collected, protected and stored"
+                    intro="Sofas, beds, tables and office furniture are carefully handled, wrapped where needed and stored until you want them back."
+                    points={["Careful collection", "Wrapped and protected", "Secure warehouse", "Delivery when ready"]}
+                    images={[
+                        { src: "/images/warehouse.webp", alt: "Stock and boxes stored on racking in the KXH London warehouse", label: "Inside our warehouse" },
+                        { src: "/images/kxh-inventory-management-london.webp", alt: "Furniture Storage London with KXH Storage & Logistics", label: "Careful collection" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=storage"
+                    ctaLabel="Get a Furniture Storage Quote"
+                />
                 <FinalCtaSection />
                 <FaqSection />
 
