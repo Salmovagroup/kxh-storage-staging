@@ -335,6 +335,7 @@ img {
   }
 }
 /* ===== Salmova: hero motion + 3D (respects reduced motion) ===== */
+.kxh-hero h1, .kxh-hero h2, .kxh-hero h3 { color: #fff; }
 @keyframes kxhKenburns { from { transform: scale(1.04); } to { transform: scale(1.12); } }
 .kxh-kenburns { animation: kxhKenburns 18s ease-in-out infinite alternate; }
 
