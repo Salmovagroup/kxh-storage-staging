@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/inventory-management/inventory-management-london-warehouse-stock-handling.webp",
+        url: "/images/kxh-inventory-management-london.webp",
         width: 1200,
         height: 630,
         alt: "Organised business inventory inside a managed London warehouse",
