@@ -1,3 +1,4 @@
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import { CalendarRange as HIcCalendarRange, Hammer as HIcHammer, Plane as HIcPlane, Home as HIcHome } from "lucide-react";
 import type { Metadata } from "next";
@@ -785,7 +786,7 @@ function ResidentialMovingStorageSection() {
     return (
         <section aria-labelledby="residential-moving-storage" className="border-y border-slate-200 bg-white py-16 lg:py-24">
             <div className="mx-auto grid max-w-screen-xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
-                <Image src="/images/kxh-moving-removals-london.webp" alt="KXH movers packing household belongings before storage" width={1400} height={800} quality={75} sizes="(max-width: 1024px) 100vw, 50vw" className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl" loading="lazy" decoding="async" />
+                <Image src="/images/kxh-moving-removals-london.webp" alt="KXH movers packing household belongings before storage" width={1400} height={800} quality={75} sizes="(max-width: 1024px) 100vw, 50vw" className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]" loading="lazy" decoding="async" />
                 <div>
                     <p className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">Residential Moving &amp; Storage</p>
                     <h2 id="residential-moving-storage" className="mt-4 text-3xl font-black text-slate-950 sm:text-4xl">House Removals With Storage Between Addresses</h2>
@@ -814,7 +815,7 @@ function BusinessMovingStorageSection() {
                     </ul>
                     <p className="mt-6 leading-7 text-slate-600">See <Link href="/business-storage-london" className="font-semibold text-emerald-700 hover:underline">Business Storage London</Link>, <Link href="/commercial-storage-london" className="font-semibold text-emerald-700 hover:underline">Commercial Storage London</Link> and <Link href="/retail-stock-storage-london" className="font-semibold text-emerald-700 hover:underline">Retail Stock Storage London</Link>.</p>
                 </div>
-                <Image src="/images/new-van.webp" alt="KXH team handling office furniture and business equipment during a London relocation" width={1400} height={800} quality={75} sizes="(max-width: 1024px) 100vw, 50vw" className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl" loading="lazy" decoding="async" />
+                <Image src="/images/new-van.webp" alt="KXH team handling office furniture and business equipment during a London relocation" width={1400} height={800} quality={75} sizes="(max-width: 1024px) 100vw, 50vw" className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]" loading="lazy" decoding="async" />
             </div>
         </section>
     );
@@ -936,7 +937,7 @@ function ReturnDeliverySection() {
     return (
         <section aria-labelledby="return-delivery" className="border-y border-slate-200 bg-white py-16 lg:py-24">
             <div className="mx-auto grid max-w-screen-xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
-                <Image src="/images/delivery-warehouse.webp" alt="KXH moving and storage team ready for scheduled return delivery" width={1400} height={800} quality={75} sizes="(max-width: 1024px) 100vw, 50vw" className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl" loading="lazy" decoding="async" />
+                <Image src="/images/delivery-warehouse.webp" alt="KXH moving and storage team ready for scheduled return delivery" width={1400} height={800} quality={75} sizes="(max-width: 1024px) 100vw, 50vw" className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]" loading="lazy" decoding="async" />
                 <div>
                     <p className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">Flexible Return Delivery</p>
                     <h2 id="return-delivery" className="mt-4 text-3xl font-black text-slate-950 sm:text-4xl">Deliver Everything at Once or Return Items in Stages</h2>
@@ -1123,6 +1124,19 @@ export default function MovingStorageLondonPage() {
 
                 <RelatedServicesSection />
 
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="Moving and storage in one simple service"
+                    intro="We collect your belongings, store them for as long as you need and deliver them to your new home when you are ready."
+                    points={["Collection from old address", "Secure storage between dates", "Delivery to new address", "Packing available"]}
+                    images={[
+                        { src: "/images/new-van.webp", alt: "KXH Storage & Logistics van outside a London apartment block", label: "Our own KXH vans" },
+                        { src: "/images/kxh-moving-removals-london.webp", alt: "Moving & Storage London with KXH Storage & Logistics", label: "Packed and loaded" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=moving"
+                    ctaLabel="Get a Moving & Storage Quote"
+                />
                 <TestimonialsSection />
 
                 <FinalCallToActionSection />
