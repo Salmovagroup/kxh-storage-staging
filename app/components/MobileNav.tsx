@@ -288,7 +288,7 @@ export default function Nav() {
                                     aria-current={
                                         active ? "page" : undefined
                                     }
-                                    className={`kxh-navlink relative rounded-lg px-2 py-2 text-sm font-semibold transition xl:px-3 ${item.exact ? "hidden xl:block" : ""} ${active
+                                    className={`kxh-navlink relative whitespace-nowrap rounded-lg px-2 py-2 text-sm font-semibold transition xl:px-3 ${item.exact ? "hidden xl:block" : ""} ${active
                                         ? "bg-emerald-50 text-emerald-700"
                                         : "text-slate-700 hover:bg-slate-50 hover:text-emerald-700"
                                         }`}
@@ -313,7 +313,7 @@ export default function Nav() {
                                     openDesktopMenu === "services"
                                 }
                                 aria-controls="desktop-services-menu"
-                                className={`kxh-navlink relative flex items-center gap-1 rounded-lg px-2 py-2 text-sm font-semibold transition xl:px-3 ${isServicesActive
+                                className={`kxh-navlink relative flex items-center whitespace-nowrap gap-1 rounded-lg px-2 py-2 text-sm font-semibold transition xl:px-3 ${isServicesActive
                                     ? "bg-emerald-50 text-emerald-700"
                                     : "text-slate-700 hover:bg-slate-50 hover:text-emerald-700"
                                     }`}
@@ -404,7 +404,7 @@ export default function Nav() {
                                     openDesktopMenu === "locations"
                                 }
                                 aria-controls="desktop-locations-menu"
-                                className={`kxh-navlink relative flex items-center gap-1 rounded-lg px-2 py-2 text-sm font-semibold transition xl:px-3 ${isLocationsActive
+                                className={`kxh-navlink relative flex items-center whitespace-nowrap gap-1 rounded-lg px-2 py-2 text-sm font-semibold transition xl:px-3 ${isLocationsActive
                                     ? "bg-emerald-50 text-emerald-700"
                                     : "text-slate-700 hover:bg-slate-50 hover:text-emerald-700"
                                     }`}
@@ -461,7 +461,7 @@ export default function Nav() {
                                     aria-current={
                                         active ? "page" : undefined
                                     }
-                                    className={`kxh-navlink relative rounded-lg px-2 py-2 text-sm font-semibold transition xl:px-3 ${active
+                                    className={`kxh-navlink relative whitespace-nowrap rounded-lg px-2 py-2 text-sm font-semibold transition xl:px-3 ${active
                                         ? "bg-emerald-50 text-emerald-700"
                                         : "text-slate-700 hover:bg-slate-50 hover:text-emerald-700"
                                         }`}
@@ -472,7 +472,7 @@ export default function Nav() {
                         })}
 
                     </nav>
-                    <div className="hidden 2xl:block">
+                    <div className="hidden min-[1720px]:block">
                         <SocialLinks
                             variant="brand"
                             size="sm"
@@ -501,7 +501,7 @@ export default function Nav() {
                             <a
                                 href={PHONE_HREF}
                                 aria-label={`Call KXH Storage and Logistics on ${PHONE_DISPLAY}`}
-                                className="group inline-flex items-center gap-2 rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50 xl:px-4"
+                                className="group inline-flex items-center gap-2 whitespace-nowrap rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50 xl:px-4"
                             >
                                 <span className="relative flex h-2 w-2">
                                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -514,7 +514,7 @@ export default function Nav() {
 
                             <Link
                                 href="/get-a-quote"
-                                className="kxh-shine relative inline-flex overflow-hidden rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-emerald-700/25 transition hover:-translate-y-0.5 hover:bg-emerald-800"
+                                className="kxh-shine relative inline-flex overflow-hidden whitespace-nowrap rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-emerald-700/25 transition hover:-translate-y-0.5 hover:bg-emerald-800"
                             >
                                 Get Free Quote
                             </Link>
