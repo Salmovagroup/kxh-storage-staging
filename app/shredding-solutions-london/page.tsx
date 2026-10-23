@@ -212,7 +212,7 @@ export default function ShreddingServicePage() {
             </div>
             <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
               <Image
-                src="/images/shredding/document-shredding-hero.webp"
+                src="/images/kxh-shredding-solutions-london.webp"
                 alt="Confidential document shredding services in London"
                 width={1400}
                 height={800}
