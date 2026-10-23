@@ -136,7 +136,7 @@ export default function ThirdPartyLogisticsPage() {
                         </div>
                         <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
                             <Image
-                                src="/images/third-party-logistics/3pl-hero-warehouse.webp"
+                                src="/images/kxh-third-party-logistics-london.webp"
                                 alt="KXH Storage and Logistics third party logistics warehouse in London"
                                 width={1400}
                                 height={800}
