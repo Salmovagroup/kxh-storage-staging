@@ -153,7 +153,7 @@ export default function StudentStoragePage() {
 
                         <div className="mt-12">
                             <Image
-                                src="/images/student-storage.webp"
+                                src="/images/kxh-student-storage-london.webp"
                                 alt="Student storage with collection and delivery in London"
                                 className="w-full rounded-3xl border border-slate-200 shadow-xl"
                                 width={1200}
