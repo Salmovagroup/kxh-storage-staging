@@ -375,7 +375,7 @@ img {
 .kxh-shine:hover::before { transform: translateX(120%) skewX(-20deg); }
 
 /* ===== Salmova: scroll reveal (content stays visible without JS) ===== */
-.kxh-reveal-ready .kxh-reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1); }
+.kxh-reveal-ready .kxh-reveal { opacity: .35; transform: translateY(14px); transition: opacity .45s ease, transform .45s cubic-bezier(.2,.7,.2,1); }
 .kxh-reveal-ready .kxh-reveal.is-in { opacity: 1; transform: none; }
 
 /* ===== Salmova: 3D cards ===== */
@@ -396,3 +396,6 @@ img {
 .kxh-fade { animation: kxhFade .2s ease-out both; }
 .kxh-sheet { animation: kxhSheet .28s cubic-bezier(.2,.7,.2,1) both; }
 @media (prefers-reduced-motion: reduce) { .kxh-fade, .kxh-sheet { animation: none !important; } }
+
+/* anchor targets clear the sticky header */
+section[id] { scroll-margin-top: 88px; }
