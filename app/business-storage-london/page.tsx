@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Flexible managed business storage with collection, secure warehouse storage, inventory organisation, pallet support, and return delivery across London.",
     images: [
       {
-        url: "/images/business-storage/business-storage-london-warehouse-inventory.webp",
+        url: "/images/kxh-business-storage-london.webp",
         width: 1200,
         height: 630,
         alt: "Business stock stored inside a managed London warehouse",
