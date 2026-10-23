@@ -9,7 +9,7 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import AreaMapExplorer from "../components/AreaMapExplorer";
 import type { ReactNode } from "react";
-import { ArrowRight, Boxes, Building2, CheckCircle2, ChevronRight, ClipboardList, Clock, FileText, GraduationCap, Hammer, Home, Layers, Mail, MapPin, Package, Phone, ShoppingCart, Smartphone, Truck, Warehouse, Zap } from "lucide-react";
+import { ArrowRight, Boxes, Building2, CheckCircle2, ChevronRight, ClipboardList, Clock, FileText, GraduationCap, Hammer, Home, Layers, Mail, MapPin, Package, Phone, ShoppingCart, Smartphone, Star, Truck, Warehouse, Zap } from "lucide-react";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
 const SITE_URL = "https://kxhlogistics.co.uk";
@@ -592,7 +592,7 @@ export default function ContactPage() {
                     <div className="absolute inset-0 -z-20">
                         <Image src="/images/delivery-warehouse.webp" alt="KXH Storage & Logistics van in London" fill priority sizes="100vw" className="kxh-kenburns object-cover object-center" />
                     </div>
-                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/85 to-slate-950/50" />
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/40" />
                     <div className="mx-auto max-w-screen-xl px-4 pb-16 pt-6 sm:px-6 lg:px-8 lg:pb-20">
                         <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-xs text-slate-300 sm:text-sm">
                             <Link href="/" className="transition hover:text-white">Home</Link>
@@ -630,7 +630,18 @@ export default function ContactPage() {
                                         <Phone className="h-4 w-4" /> 020 3916 5312
                                     </a>
                                 </div>
-                                <div className="mt-6"><TrustpilotPill /></div>
+                                <div className="mt-6 flex flex-wrap gap-3">
+                                    <span className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2.5 text-sm backdrop-blur">
+                                        <span className="font-bold">Google</span>
+                                        <span className="flex">{[0, 1, 2, 3, 4].map((i) => <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />)}</span>
+                                        <span className="font-semibold">5.0</span>
+                                    </span>
+                                    <a href="https://www.trustpilot.com/review/kxhlogistics.co.uk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2.5 text-sm backdrop-blur transition hover:bg-white/20">
+                                        <Star className="h-4 w-4 fill-[#00b67a] text-[#00b67a]" />
+                                        <span className="font-bold">Trustpilot</span>
+                                        <span className="font-semibold">4.8</span>
+                                    </a>
+                                </div>
                             </div>
 
                             <div className="kxh-rise grid gap-3 [animation-delay:150ms] sm:grid-cols-2 lg:grid-cols-1">
