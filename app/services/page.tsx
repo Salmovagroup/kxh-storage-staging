@@ -401,7 +401,7 @@ export default function ServicesPage() {
 
                 {/* CATEGORY JUMP NAV */}
                 <nav aria-label="Service categories" className="sticky top-16 z-30 border-b border-slate-200 bg-white/90 backdrop-blur lg:top-[72px]">
-                    <div className="mx-auto flex max-w-screen-xl gap-2 overflow-x-auto px-4 py-3 sm:px-6 lg:px-8">
+                    <div className="mx-auto flex max-w-screen-xl gap-2 overflow-x-auto px-4 py-3 [scrollbar-width:none] sm:px-6 lg:px-8 [&::-webkit-scrollbar]:hidden">
                         {CATEGORIES.map((c) => (
                             <a
                                 key={c.id}
