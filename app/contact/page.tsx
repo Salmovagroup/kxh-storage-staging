@@ -14,18 +14,13 @@ const PHONE_DISPLAY = CONTACT_NUMBERS[0].phone;
 const PHONE_HREF = CONTACT_NUMBERS[0].href;
 const EMAIL = "help@kxhlogistics.co.uk";
 const OPENING_HOURS = [
-    { label: "Monday–Friday", value: "8:00 AM–6:00 PM" },
-    { label: "Saturday", value: "9:00 AM–4:00 PM" },
-    { label: "Sunday", value: "By appointment" },
+    { label: "Monday–Sunday", value: "Open 24 hours" },
 ];
-const TRUSTPILOT_RATING = "4.8";
-const TRUSTPILOT_REVIEW_COUNT = "66";
 
 
 
 export const metadata: Metadata = {
-    title:
-        "Contact KXH Storage & Logistics | London Moving, Storage & Warehouse Services",
+    title: "Contact KXH | Storage & Moving in London, Open 24/7",
     description:
         "Contact KXH Storage & Logistics for moving services, managed storage, business storage, warehouse storage, student storage, collection and delivery across London. Request a tailored quotation today.",
     keywords: [
@@ -437,7 +432,7 @@ function ContactPageJsonLd() {
         },
         about: {
             "@type": "LocalBusiness",
-            "@id": `${SITE_URL}/#localbusiness`,
+            "@id": `${SITE_URL}/#business`,
             name: "KXH Storage & Logistics",
         },
     };
@@ -454,7 +449,7 @@ function LocalBusinessJsonLd() {
     const data = {
         "@context": "https://schema.org",
         "@type": ["LocalBusiness", "MovingCompany", "StorageFacility"],
-        "@id": `${SITE_URL}/#localbusiness`,
+        "@id": `${SITE_URL}/#business`,
         name: "KXH Storage & Logistics",
         url: SITE_URL,
         telephone: PHONE_DISPLAY,
@@ -466,23 +461,11 @@ function LocalBusinessJsonLd() {
         openingHoursSpecification: [
             {
                 "@type": "OpeningHoursSpecification",
-                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                opens: "08:00",
-                closes: "18:00",
-            },
-            {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: "Saturday",
-                opens: "09:00",
-                closes: "16:00",
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                opens: "00:00",
+                closes: "23:59",
             },
         ],
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: TRUSTPILOT_RATING,
-            reviewCount: TRUSTPILOT_REVIEW_COUNT,
-            bestRating: "5",
-        },
         contactPoint: [
             {
                 "@type": "ContactPoint",
