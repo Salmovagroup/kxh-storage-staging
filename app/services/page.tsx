@@ -1,3 +1,5 @@
+import ServiceHero from "../components/ServiceHero";
+import { Warehouse as HIcWarehouse, Boxes as HIcBoxes, Truck as HIcTruck, FileText as HIcFileText } from "lucide-react";
 import CrispChat from "@/app/components/chat/CrispChat";
 import MainFooter from "@/app/components/footer/MainFooter";
 import Nav from "@/app/components/MobileNav";
@@ -8,9 +10,9 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import Image from "next/image";
 
 export const metadata = {
-    title: "Storage, Inventory, Pallet & Moving Services London | KXH",
+    title: "Storage, Moving & Logistics Services London | KXH",
     description:
-        "Explore KXH Logistics services including warehouse storage, inventory management, pallet storage, business storage, moving services, and secure document shredding across London.",
+    "All KXH services in London: warehouse, business and student storage, pallet storage, inventory management, moving, packing and document shredding.",
     alternates: {
         canonical: "https://kxhlogistics.co.uk/services",
     },
@@ -217,46 +219,31 @@ export default function ServicesPage() {
                 <FaqJsonLd />
 
                 {/* HERO */}
-                <section className="bg-gradient-to-b from-slate-50 to-white border-b border-slate-200/50">
-                    <div className="max-w-5xl mx-auto px-4 py-20 text-center">
-
-                        <h1 className="text-4xl sm:text-5xl font-black tracking-tight">
-                            Logistics Services Built for London Businesses & Homes
-                        </h1>
-
-                        <p className="mt-5 text-lg text-slate-600 max-w-2xl mx-auto">
-                            Secure storage, reliable moving, and compliant document shredding — all managed end-to-end with pickup and delivery included.
-                        </p>
-
-                        {/* CTA */}
-                        <div className="mt-8 flex justify-center">
-                            <Link
-                                href="/get-a-quote"
-                                className="bg-emerald-700 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-emerald-700 transition"
-                            >
-                                Get Quote
-                            </Link>
-                        </div>
-                        <div className="mt-4 flex justify-center">
-                            <TrustpilotPill />
-                        </div>
-                        <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
-                            <Image
-                                src="/images/services/services-hero.webp"
-                                alt="Warehouse storage, inventory management and logistics services in London"
-                                width={1400}
-                                height={800}
-                                priority
-                                className="w-full h-auto object-cover"
-                            />
-                        </div>
-                    </div>
-                </section>
+                <ServiceHero
+                    image="/images/kxh-home-hero-warehouse-london.webp"
+                    imageAlt="Storage, Moving & Logistics Services in London with KXH Storage & Logistics"
+                    breadcrumb={[{"label": "Home", "href": "/"}, {"label": "Services"}]}
+                    eyebrow="All services"
+                    title="Storage, Moving & Logistics Services in London"
+                    highlight="Logistics Services"
+                    intro="Everything KXH offers in one place: storage with collection and delivery, business and pallet storage, inventory support, moving, packing and secure shredding."
+                    chips={["Storage with collection", "Business logistics", "Moving and packing", "Secure shredding"]}
+                    ctaHref="/get-a-quote"
+                    ctaLabel="Get Instant Quote"
+                    cardEyebrow="Explore"
+                    cardTitle="Our main services"
+                    cardItems={[
+                        { icon: <HIcWarehouse className="h-6 w-6" aria-hidden="true" />, title: "Storage", text: "Homes and students" },
+                        { icon: <HIcBoxes className="h-6 w-6" aria-hidden="true" />, title: "Business", text: "Stock and pallets" },
+                        { icon: <HIcTruck className="h-6 w-6" aria-hidden="true" />, title: "Moving", text: "Homes and offices" },
+                        { icon: <HIcFileText className="h-6 w-6" aria-hidden="true" />, title: "Shredding", text: "Confidential papers" },
+                    ]}
+                />
                 <section className="max-w-5xl mx-auto px-4 py-16">
                     <div className="prose prose-slate max-w-none">
                         <div className="mb-10 overflow-hidden rounded-3xl border border-slate-200">
                             <Image
-                                src="/images/services/services-overview.webp"
+                                src="/images/kxh-home-hero-warehouse-london.webp"
                                 alt="Warehouse storage and logistics services"
                                 width={1400}
                                 height={700}
@@ -300,7 +287,7 @@ export default function ServicesPage() {
                     <div className="max-w-5xl mx-auto px-4">
                         <div className="mb-10 overflow-hidden rounded-3xl border border-slate-200">
                             <Image
-                                src="/images/services/services-student-storage.webp"
+                                src="/images/kxh-student-storage-london.webp"
                                 alt="Student and renter storage services in London"
                                 width={1400}
                                 height={700}
@@ -347,7 +334,7 @@ export default function ServicesPage() {
                 <section className="max-w-5xl mx-auto px-4 py-16">
                     <div className="mb-10 overflow-hidden rounded-3xl border border-slate-200">
                         <Image
-                            src="/images/services/services-business-logistics.webp"
+                            src="/images/kxh-business-storage-london.webp"
                             alt="Business storage, pallet storage and logistics support"
                             width={1400}
                             height={700}
@@ -393,7 +380,7 @@ export default function ServicesPage() {
                         </div>
                         <div className="mb-10 overflow-hidden rounded-3xl border border-slate-200">
                             <Image
-                                src="/images/services/services-team.webp"
+                                src="/images/new-van.webp"
                                 alt="KXH Storage and Logistics team"
                                 width={1400}
                                 height={700}
