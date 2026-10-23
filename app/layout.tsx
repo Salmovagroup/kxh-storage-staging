@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import Script from "next/script";
 import RevealObserver from "./components/RevealObserver";
+import FloatingContact from "./components/FloatingContact";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* <CheckoutProvider></CheckoutProvider> */}
         {children}
         <RevealObserver />
+        <FloatingContact />
         <Toaster position="top-right" richColors />
         <Script
           src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
