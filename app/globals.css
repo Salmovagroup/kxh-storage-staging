@@ -362,3 +362,37 @@ img {
 @media (prefers-reduced-motion: reduce) {
   .kxh-kenburns, .kxh-rise, .kxh-stack, .kxh-cube { animation: none !important; }
 }
+
+/* ===== Salmova: nav effects ===== */
+.kxh-navlink::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, #059669, #a3e635); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.kxh-navlink:hover::after, .kxh-navlink[aria-current="page"]::after, .kxh-navlink[aria-expanded="true"]::after { transform: scaleX(1); }
+@keyframes kxhDrop { from { opacity: 0; transform: translate(var(--kxh-dx, 0), -6px) scale(.98); } to { opacity: 1; transform: translate(var(--kxh-dx, 0), 0) scale(1); } }
+.kxh-drop { animation: kxhDrop .18s ease-out both; }
+.kxh-drop.-translate-x-1\/2 { --kxh-dx: -50%; }
+.kxh-shine::before { content: ""; position: absolute; inset: 0; transform: translateX(-120%) skewX(-20deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent); transition: transform .6s ease; }
+.kxh-shine:hover::before { transform: translateX(120%) skewX(-20deg); }
+
+/* ===== Salmova: scroll reveal (content stays visible without JS) ===== */
+.kxh-reveal-ready .kxh-reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1); }
+.kxh-reveal-ready .kxh-reveal.is-in { opacity: 1; transform: none; }
+
+/* ===== Salmova: 3D cards ===== */
+.kxh-card3d { transform-style: preserve-3d; transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease; }
+.kxh-card3d:hover, .kxh-reveal-ready .kxh-card3d.kxh-reveal.is-in:hover { transform: perspective(900px) rotateX(4deg) rotateY(-4deg) translateY(-6px); box-shadow: 0 30px 60px -20px rgba(2,44,34,.35); }
+.kxh-card3d .kxh-pop { transition: transform .35s ease; }
+.kxh-card3d:hover .kxh-pop { transform: translateZ(30px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .kxh-drop, .kxh-shine::before { animation: none !important; transition: none !important; }
+  .kxh-reveal-ready .kxh-reveal { opacity: 1 !important; transform: none !important; }
+  .kxh-card3d:hover, .kxh-reveal-ready .kxh-card3d.kxh-reveal.is-in:hover { transform: none; }
+}
+
+/* ===== Salmova: modal ===== */
+@keyframes kxhFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes kxhSheet { from { opacity: 0; transform: translateY(24px) scale(.98); } to { opacity: 1; transform: none; } }
+.kxh-fade { animation: kxhFade .2s ease-out both; }
+.kxh-sheet { animation: kxhSheet .28s cubic-bezier(.2,.7,.2,1) both; }
+@media (prefers-reduced-motion: reduce) { .kxh-fade, .kxh-sheet { animation: none !important; } }

@@ -4,6 +4,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import Script from "next/script";
+import RevealObserver from "./components/RevealObserver";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://kxhlogistics.co.uk"),
   title: {
     default: "KXH Storage & Logistics | Storage with Pickup & Delivery",
-    template: "%s | KXH Storage & Logistics",
+    template: "%s",
   },
   description:
     "Door-to-door storage with pickup & delivery. We collect, store, and return your items—simple, secure, and flexible.",
@@ -29,20 +30,20 @@ export const metadata: Metadata = {
     "warehouse storage",
     "UK storage service",
   ],
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: "/",
+    siteName: "KXH Storage & Logistics",
+    locale: "en_GB",
     title: "KXH Storage & Logistics | Storage with Pickup & Delivery",
     description:
       "Pickup, store, and return your items with door-to-door convenience.",
-    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "KXH storage team loading boxes" }],
+    images: [{ url: "/images/kxh-home-hero-warehouse-london.webp", width: 1600, height: 900, alt: "KXH Storage & Logistics warehouse and collection van in London" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "KXH Storage & Logistics",
     description: "Storage with pickup & delivery—door-to-door convenience.",
-    images: ["/og.jpg"],
+    images: ["/images/kxh-home-hero-warehouse-london.webp"],
   },
   robots: {
     index: true,
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {/* <CheckoutProvider></CheckoutProvider> */}
         {children}
+        <RevealObserver />
         <Toaster position="top-right" richColors />
         <Script
           src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
