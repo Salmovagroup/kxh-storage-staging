@@ -46,17 +46,21 @@ export const metadata: Metadata = {
     description: "Storage with pickup & delivery—door-to-door convenience.",
     images: ["/images/kxh-home-hero-warehouse-london.webp"],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
+  // Salmova staging (Netlify) is noindex; the live site keeps full indexing.
+  robots:
+    (process.env.NETLIFY === "true" || (process.env.NEXT_PUBLIC_APP_URL ?? "").includes("netlify.app"))
+      ? { index: false, follow: false, googleBot: { index: false, follow: false } }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1,
+          },
+        },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
