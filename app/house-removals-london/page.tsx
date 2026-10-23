@@ -1,3 +1,4 @@
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import { Home as HIcHome, Building2 as HIcBuilding2, Package as HIcPackage, Warehouse as HIcWarehouse } from "lucide-react";
 import type { Metadata } from "next";
@@ -780,16 +781,17 @@ function WhatWeMoveSection() {
         <section aria-labelledby="what-we-move" className="border-y border-slate-200 bg-white py-16 lg:py-24">
             <div className="mx-auto grid max-w-screen-xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
                 <Image
-                    src="/images/kxh-moving-removals-london.webp"
+                    src="/images/kxh-collection-delivery-london.webp"
                     alt="KXH movers protecting and loading household furniture"
                     width={1400}
                     height={800}
                     quality={75}
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+                    className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                     loading="lazy"
                     decoding="async"
                 />
+
                 <div>
                     <p className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">What We Move</p>
                     <h2 id="what-we-move" className="mt-4 text-3xl font-black text-slate-950 sm:text-4xl">Household Furniture, Boxes, Appliances and Personal Belongings</h2>
@@ -851,10 +853,11 @@ function StorageSection() {
                     height={800}
                     quality={75}
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+                    className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                     loading="lazy"
                     decoding="async"
                 />
+
             </div>
         </section>
     );
@@ -1165,6 +1168,19 @@ export default function HomeRemovalsLondonPage() {
                 <ScenariosSection />
                 <LondonCoverageSection />
                 <RelatedGuidesSection />
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="House moves handled by our own crew"
+                    intro="We pack, load and move your home with our own vans and team, with storage available if your dates do not line up."
+                    points={["Packing and wrapping", "Furniture protection", "Same-day London moves", "Storage between homes"]}
+                    images={[
+                        { src: "/images/new-van.webp", alt: "KXH Storage & Logistics van outside a London apartment block", label: "Our own KXH vans" },
+                        { src: "/images/kxh-collection-delivery-london.webp", alt: "House Removals London with KXH Storage & Logistics", label: "Careful packing" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=moving"
+                    ctaLabel="Get a Removals Quote"
+                />
                 <TestimonialsSection />
                 <FinalCallToActionSection />
                 <FaqsSection />
