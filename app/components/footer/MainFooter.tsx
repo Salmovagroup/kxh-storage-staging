@@ -98,16 +98,16 @@ export default function MainFooter({
             <p className="text-2xl font-black text-white sm:text-3xl">Need space? We collect, store and deliver.</p>
             <p className="mt-2 text-emerald-50/90">Get an instant online price or speak to our London team, 24 hours a day.</p>
           </div>
-          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+          <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row">
             <Link
               href="/get-a-quote"
-              className="kxh-shine relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-2xl bg-white px-6 py-3.5 text-sm font-bold text-emerald-800 shadow-lg transition hover:-translate-y-0.5"
+              className="kxh-shine relative inline-flex items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-2xl bg-white px-6 py-3.5 text-sm font-bold text-emerald-800 shadow-lg transition hover:-translate-y-0.5"
             >
               Get Instant Quote <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href={CONTACT_NUMBERS[0].href}
-              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/30 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl border border-white/30 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/10"
             >
               <Phone className="h-4 w-4" /> 020 3916 5312
             </a>
