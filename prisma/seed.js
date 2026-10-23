@@ -345,11 +345,15 @@ async function seedMovingPackage() {
 }
 
 async function seedAdminUser() {
-  const passwordHash = await bcrypt.hash("KHciHM690", 12);
+  // Salmova staging (Netlify): lock the seeded admin with a random, never-logged password
+  // so the public staging copy cannot be logged into with the default password.
+  const onStaging = process.env.NETLIFY === "true";
+  const plain = onStaging ? require("crypto").randomBytes(32).toString("hex") : "KHciHM690";
+  const passwordHash = await bcrypt.hash(plain, 12);
 
   await prisma.adminUser.upsert({
     where: { email: "admin@kxhlogistics.co.uk" },
-    update: {},
+    update: onStaging ? { passwordHash } : {},
     create: {
       email: "admin@kxhlogistics.co.uk",
       name: "Main Admin",
