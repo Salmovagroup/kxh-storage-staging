@@ -238,11 +238,13 @@ label {
    SEO helpers
 ================================ */
 
-/* Prevent CLS for images */
-img {
-  height: auto;
-  max-width: 100%;
-  display: block;
+/* Prevent CLS for images (in the base layer so height utilities like h-64 still apply) */
+@layer base {
+  img {
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
 }
 
 /* ===============================
