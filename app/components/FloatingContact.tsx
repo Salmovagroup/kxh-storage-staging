@@ -37,20 +37,9 @@ export default function FloatingContact() {
             role="complementary"
             aria-label="Quick contact"
         >
-            <a
-                href={WHATSAPP_HREF}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="kxh-jump group relative flex items-center gap-2"
-                aria-label="Get a WhatsApp quote from KXH"
-            >
-                <span className="kxh-wa-label inline-block whitespace-nowrap rounded-full bg-white px-2.5 py-1 text-[11px] font-bold text-slate-900 shadow-lg ring-1 ring-[#25D366]/40 sm:px-3 sm:py-1.5 sm:text-sm">
-                    Get a WhatsApp Quote
-                </span>
-                <span className={`${btn} bg-[#25D366]`}>
-                    <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-40 motion-safe:animate-ping" aria-hidden="true" />
-                    <WhatsAppIcon className="relative h-6 w-6 sm:h-7 sm:w-7" />
-                </span>
+            <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className={`${btn} bg-[#25D366]`} aria-label="Chat with KXH on WhatsApp">
+                <WhatsAppIcon className="relative h-6 w-6 sm:h-7 sm:w-7" />
+                <span className={tip}>WhatsApp us</span>
             </a>
 
             <a href={PHONE_HREF} className={`${btn} bg-emerald-700`} aria-label={`Call KXH on ${PHONE_LABEL}`}>
@@ -61,7 +50,7 @@ export default function FloatingContact() {
             {!onQuotePage && (
                 <Link
                     href="/get-a-quote"
-                    className="kxh-shine group relative flex items-center justify-center overflow-hidden rounded-full bg-slate-950 text-white shadow-xl ring-2 ring-white/80 transition duration-300 hover:-translate-x-1 hover:bg-emerald-600 focus-visible:outline-none focus-visible:ring-4 max-sm:h-12 max-sm:w-12 sm:rounded-2xl sm:px-3 sm:py-4"
+                    className="kxh-jump kxh-quote-blink kxh-shine group relative flex items-center justify-center overflow-hidden rounded-full bg-slate-950 text-white shadow-xl ring-2 ring-white/80 transition duration-300 hover:-translate-x-1 hover:bg-emerald-600 focus-visible:outline-none focus-visible:ring-4 max-sm:h-12 max-sm:w-12 sm:rounded-2xl sm:px-3 sm:py-4"
                     aria-label="Get an instant quote"
                 >
                     <FileText className="h-5 w-5 sm:hidden" aria-hidden="true" />
