@@ -1918,9 +1918,11 @@ export default function MovingServicePage() {
                 <TrustpilotJsonLd />
 
                 
-                <MovingServiceLinks className="mx-auto max-w-screen-xl px-5 pb-5 pt-4 sm:px-6 lg:px-8" />
-
                 <HeroSection />
+
+                <div className="border-b border-slate-200/70 bg-white py-5">
+                    <MovingServiceLinks className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8" />
+                </div>
 
                 <MovingProcessSection />
 
