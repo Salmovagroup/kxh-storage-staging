@@ -154,7 +154,7 @@ export default function PalletStoragePage() {
             </div>
             <div className="mt-12">
               <Image
-                src="/images/pallet-storage/pallet-storage-london-bulk-warehouse.webp"
+                src="/images/kxh-pallet-storage-london.webp"
                 alt="Pallet storage warehouse in London with pallet racking and bulk inventory"
                 className="w-full rounded-3xl border border-slate-200 shadow-xl"
                 width={1200}
