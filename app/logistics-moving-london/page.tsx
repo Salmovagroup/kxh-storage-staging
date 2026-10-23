@@ -1529,19 +1529,6 @@ function CustomerFitSection() {
                         Ideal If You Need Flexible Moving Support
                     </h2>
                 </div>
-                <div className="kxh-reveal mt-12 overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
-                    <Image
-                        src="/images/kxh-student-storage-london.webp"
-                        alt="Students and renters preparing belongings for a London move"
-                        width={1400}
-                        height={700}
-                        quality={75}
-                        sizes="(max-width: 768px) 100vw, 960px"
-                        className="h-auto w-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                    />
-                </div>
                 <div className="mt-10 grid gap-4 md:grid-cols-2">
                     {customerFitItems.map((item) => (
                         <Link
@@ -1956,7 +1943,6 @@ export default function MovingServicePage() {
                 <MovingCtaSection />
 
                 <MovingFaqSection />
-
 
                 <MainFooter locations={londonLocations} />
             </main>
