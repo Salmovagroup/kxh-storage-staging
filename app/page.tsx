@@ -11,7 +11,7 @@ import TestimonialsSection from "./components/TestimonialsSection";
 import TrustpilotPill from "./components/trustpilot/TrustpilotPill";
 import Image from "next/image";
 import { CONTACT_NUMBERS } from "./lib/contact";
-import { Star } from "lucide-react";
+import HomeHeroCover from "./components/hero/HomeHeroCover";
 
 export const metadata: Metadata = {
     title: "Warehouse Storage, Business Storage & Moving Services London | KXH",
@@ -371,178 +371,23 @@ export default async function HomePage() {
                 <JsonLd />
                 <FAQJsonLd />
                 <BreadcrumbJsonLd />
-                {/* Hero Section */}
+                {/* Hero Section (new cover) */}
+                <HomeHeroCover />
 
-                <section className="relative overflow-hidden bg-gradient-to-b from-white to-emerald-50/30">
-                    <div className="mx-auto grid max-w-screen-xl items-center gap-x-10 gap-y-6 px-4 pb-14 pt-8 sm:px-6 sm:pt-10 lg:min-h-screen lg:grid-cols-2 lg:gap-x-14 lg:gap-y-6 lg:px-8 lg:py-16">
-
-                        {/* REVIEW BADGES - CENTERED ABOVE LEFT + RIGHT */}
-                        <div className="flex w-full flex-col items-center justify-center gap-2 sm:flex-row sm:gap-4 lg:col-span-2">
-
-                            {/* Trustpilot */}
-                            <div className="flex h-[52px] items-start justify-center">
-                                <TrustpilotPill />
+                {/* Proof band */}
+                <section className="border-b border-slate-200/70 bg-white py-10">
+                    <div className="mx-auto grid max-w-screen-xl grid-cols-2 gap-6 px-4 text-center sm:px-6 lg:grid-cols-4 lg:px-8">
+                        {[
+                            { big: "5.0★", small: "Google rating from 50 reviews" },
+                            { big: "4.8★", small: "Rated on Trustpilot" },
+                            { big: "24/7", small: "Open 24 hours, 7 days a week" },
+                            { big: "Door to door", small: "Collection and return across London" },
+                        ].map((s) => (
+                            <div key={s.small} className="rounded-2xl p-2 transition hover:-translate-y-1">
+                                <p className="text-3xl font-black text-emerald-700 sm:text-4xl">{s.big}</p>
+                                <p className="mt-2 text-sm text-slate-600 sm:text-base">{s.small}</p>
                             </div>
-                            
-                            {/* Google */}
-                            <a
-                                href="https://www.google.com/maps/place/KXH+Storage+and+Logistics/@51.4005411,-1.5718478,8z/data=!3m1!4b1!4m6!3m5!1s0x47d8b51f343bb04f:0x23adefcf1e4277f3!8m2!3d51.4062307!4d-0.2527389!16s%2Fg%2F11y92dhgp4?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="View KXH Storage and Logistics reviews on Google Maps"
-                                className="flex h-[45px] items-center justify-center gap-3 border border-slate-300 bg-white px-4 transition hover:border-slate-400 hover:opacity-75 rounded-xl line-height-1/2"
-                            >
-                                <span className="text-sm font-bold text-slate-800">
-                                    Google
-                                </span>
-
-                                <span className="flex items-center gap-0.5">
-                                    {[1, 2, 3, 4, 5].map((star) => (
-                                        <Star
-                                            key={star}
-                                            className="h-3.5 w-3.5 fill-amber-400 text-amber-400"
-                                        />
-                                    ))}
-                                </span>
-                            </a>
-
-                        </div>
-
-                        {/* LEFT CONTENT */}
-                        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-
-                            {/* Trusted badge */}
-                            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-[11px] font-bold uppercase tracking-wide text-emerald-700 shadow-sm sm:text-sm">
-                                <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                                Trusted Storage & Logistics in London
-                            </div>
-
-                            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.05] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-                                Warehouse Storage & Logistics in London
-                            </h1>
-
-                            <p className="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-                                KXH Storage & Logistics provides secure warehouse storage with
-                                collection and return delivery across London. We support
-                                businesses, students, renters, office relocations, inventory
-                                storage, and temporary moves with flexible storage solutions
-                                tailored to your needs.
-                            </p>
-
-                            {/* Buttons */}
-                            <div className="mt-8 flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
-                                <a
-                                    href="/get-a-quote"
-                                    className="rounded-2xl bg-emerald-700 px-7 py-4 text-center text-sm font-bold text-white shadow-xl shadow-emerald-500/20 transition hover:bg-emerald-500"
-                                >
-                                    Get Instant Quote
-                                </a>
-
-                                <a
-                                    href="/services"
-                                    className="rounded-2xl border border-emerald-200 bg-white px-7 py-4 text-center text-sm font-bold text-emerald-700 shadow-sm transition hover:bg-emerald-50"
-                                >
-                                    View All Services
-                                </a>
-                            </div>
-
-                            {/* Benefits */}
-                            <div className="mt-10 grid w-full gap-4 sm:grid-cols-2 lg:max-w-xl">
-                                {[
-                                    {
-                                        title: "Collection from Your Door",
-                                        text: "We collect directly from homes, offices, student accommodation, and businesses across London.",
-                                    },
-                                    {
-                                        title: "Secure Warehouse Storage",
-                                        text: "Your belongings are stored safely in monitored warehouse facilities with professional handling.",
-                                    },
-                                    {
-                                        title: "Flexible Storage Terms",
-                                        text: "Choose short-term or long-term storage with collection and return delivery whenever needed.",
-                                    },
-                                    {
-                                        title: "Trusted Across London",
-                                        text: "Supporting businesses, students, renters, and households with reliable storage and logistics.",
-                                    },
-                                ].map((item) => (
-                                    <div
-                                        key={item.title}
-                                        className="rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-sm transition hover:shadow-md"
-                                    >
-                                        <div className="flex items-start gap-3">
-                                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-                                                ✓
-                                            </div>
-
-                                            <div>
-                                                <h3 className="font-bold text-slate-900">
-                                                    {item.title}
-                                                </h3>
-
-                                                <p className="mt-2 text-sm leading-6 text-slate-600">
-                                                    {item.text}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* RIGHT IMAGE */}
-                        <div className="relative w-full lg:pl-4">
-                            <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
-                                <Image
-                                    src="/images/home-hero-storage.webp"
-                                    alt="KXH Storage & Logistics warehouse storage with collection and delivery service in London"
-                                    className="h-[320px] w-full object-cover object-center sm:h-[460px] lg:h-[640px]"
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width={1200}
-                                    height={800}
-                                />
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-                <section className="border-t border-slate-200/70 bg-white py-14">
-                    <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-
-                        <div className="grid grid-cols-2 gap-6 text-center lg:grid-cols-4">
-
-                            <div>
-                                <h3 className="text-4xl font-black text-emerald-700">7+</h3>
-                                <p className="mt-2 text-slate-600">
-                                    Storage & Logistics Services
-                                </p>
-                            </div>
-
-                            {/* <div>
-                                <h3 className="text-4xl font-black text-emerald-700">100+</h3>
-                                <p className="mt-2 text-slate-600">
-                                    Customer Reviews
-                                </p>
-                            </div> */}
-
-                            <div>
-                                <h3 className="text-4xl font-black text-emerald-700">London</h3>
-                                <p className="mt-2 text-slate-600">
-                                    Collection & Delivery Coverage
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="text-4xl font-black text-emerald-700">24–48h</h3>
-                                <p className="mt-2 text-slate-600">
-                                    Typical Collection Availability
-                                </p>
-                            </div>
-
-                        </div>
-
+                        ))}
                     </div>
                 </section>
 

@@ -334,3 +334,30 @@ img {
     overflow: hidden !important;
   }
 }
+/* ===== Salmova: hero motion + 3D (respects reduced motion) ===== */
+@keyframes kxhKenburns { from { transform: scale(1.04); } to { transform: scale(1.12); } }
+.kxh-kenburns { animation: kxhKenburns 18s ease-in-out infinite alternate; }
+
+@keyframes kxhRise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.kxh-rise { animation: kxhRise 0.7s cubic-bezier(.2,.7,.2,1) both; }
+
+.kxh-scene { width: 200px; height: 200px; perspective: 900px; }
+.kxh-stack { position: relative; width: 100%; height: 100%; transform-style: preserve-3d;
+  transform: rotateX(-24deg) rotateY(38deg); animation: kxhSpin 14s ease-in-out infinite alternate; }
+@keyframes kxhSpin { from { transform: rotateX(-24deg) rotateY(20deg); } to { transform: rotateX(-24deg) rotateY(60deg); } }
+.kxh-cube { position: absolute; left: 40px; top: 90px; width: 56px; height: 56px; transform-style: preserve-3d;
+  animation: kxhBob 3.2s ease-in-out infinite; }
+@keyframes kxhBob { 0%,100% { margin-top: 0; } 50% { margin-top: -8px; } }
+.kxh-face { position: absolute; inset: 0; border: 1px solid rgba(120, 72, 28, .55);
+  background: linear-gradient(135deg, #d9a86a, #b9813f); }
+.kxh-face::after { content: ""; position: absolute; left: 0; right: 0; top: 46%; height: 8%; background: rgba(240, 220, 170, .55); }
+.kxh-front  { transform: translateZ(28px); }
+.kxh-back   { transform: rotateY(180deg) translateZ(28px); }
+.kxh-right  { transform: rotateY(90deg) translateZ(28px); background: linear-gradient(135deg, #c48f4f, #9c6a30); }
+.kxh-left   { transform: rotateY(-90deg) translateZ(28px); }
+.kxh-top    { transform: rotateX(90deg) translateZ(28px); background: linear-gradient(135deg, #e8bf86, #cf9d5c); }
+.kxh-bottom { transform: rotateX(-90deg) translateZ(28px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .kxh-kenburns, .kxh-rise, .kxh-stack, .kxh-cube { animation: none !important; }
+}
