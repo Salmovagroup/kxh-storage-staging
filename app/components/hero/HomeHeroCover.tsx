@@ -102,7 +102,7 @@ export default function HomeHeroCover() {
     const p = useParallax(16);
 
     return (
-        <section className="relative isolate overflow-hidden bg-slate-950 text-white">
+        <section className="kxh-hero relative isolate overflow-hidden bg-slate-950 text-white">
             {/* Cover image with slow zoom + pointer parallax */}
             <div
                 className="absolute inset-[-24px] -z-20 will-change-transform"
@@ -131,7 +131,7 @@ export default function HomeHeroCover() {
                         Open 24 hours · 7 days a week
                     </div>
 
-                    <h1 className="mt-6 text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+                    <h1 className="mt-6 text-4xl text-white font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
                         Storage with{" "}
                         <span className="bg-gradient-to-r from-emerald-300 to-lime-200 bg-clip-text text-transparent">
                             collection &amp; delivery
@@ -195,7 +195,7 @@ export default function HomeHeroCover() {
 
                 {/* RIGHT: 3D tilt quick-quote card */}
                 <div className="kxh-rise relative mx-auto w-full max-w-md [animation-delay:150ms] lg:mx-0 lg:justify-self-end">
-                    <div className="absolute -right-6 -top-24 hidden lg:block">
+                    <div className="absolute -right-10 -top-32 hidden xl:block">
                         <BoxStack3D />
                     </div>
                     <div
@@ -205,7 +205,7 @@ export default function HomeHeroCover() {
                         <p className="text-xs font-bold uppercase tracking-wider text-emerald-300 [transform:translateZ(30px)]">
                             Instant price
                         </p>
-                        <h2 className="mt-1 text-2xl font-black [transform:translateZ(40px)]">What do you need?</h2>
+                        <h2 className="mt-1 text-2xl font-black text-white [transform:translateZ(40px)]">What do you need?</h2>
                         <div className="mt-5 grid grid-cols-2 gap-3 [transform:translateZ(25px)]">
                             {QUICK_SERVICES.map(({ label, sub, icon: Icon }) => (
                                 <Link
