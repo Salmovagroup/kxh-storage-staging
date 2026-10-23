@@ -811,7 +811,7 @@ function ServiceJsonLd() {
             "@id": "https://kxhlogistics.co.uk/#business",
             name: "KXH Storage & Logistics",
             url: "https://kxhlogistics.co.uk",
-            telephone: "+447386277785",
+            telephone: "+442039165312",
         },
         areaServed: { "@type": "City", name: "London" },
         audience: {
