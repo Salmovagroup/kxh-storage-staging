@@ -1,5 +1,6 @@
 // app/student-storage-london/page.tsx
 
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import { Sun as HIcSun, Building2 as HIcBuilding2, Luggage as HIcLuggage, Truck as HIcTruck } from "lucide-react";
 import type { Metadata } from "next";
@@ -181,18 +182,6 @@ export default function StudentStoragePage() {
                                 </div>
                             ))}
                         </div>
-                        <div className="mt-12">
-                            <Image
-                                src="/images/kxh-student-storage-london.webp"
-                                alt="Student storage collection from university accommodation in London"
-                                className="w-full rounded-3xl border border-slate-200 shadow-xl object-cover"
-                                width={1200}
-                                height={800}
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        </div>
                     </div>
                 </section>
 
@@ -283,15 +272,16 @@ export default function StudentStoragePage() {
                         <div className="grid lg:grid-cols-2 gap-12 items-start">
                             <div>
                                 <Image
-                                    src="/images/kxh-student-storage-london.webp"
+                                    src="/images/kxh-collection-delivery-london.webp"
                                     alt="University student leaving accommodation for summer storage in London"
-                                    className="w-full rounded-3xl border border-slate-200 shadow-xl object-cover h-auto"
+                                    className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                                     width={1200}
                                     height={800}
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                                     loading="lazy"
                                     decoding="async"
                                 />
+
                             </div>
                             <div>
                                 <p className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">
@@ -331,15 +321,16 @@ export default function StudentStoragePage() {
                         <div className="grid lg:grid-cols-2 gap-12 items-start">
                             <div className="lg:sticky lg:top-24">
                                 <Image
-                                    src="/images/kxh-student-storage-london.webp"
+                                    src="/images/delivery-warehouse.webp"
                                     alt="University students using KXH Storage & Logistics collection service in London"
-                                    className="w-full rounded-3xl border border-slate-200 shadow-xl object-cover h-auto"
+                                    className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                                     width={1200}
                                     height={800}
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                                     loading="lazy"
                                     decoding="async"
                                 />
+
                             </div>
 
                             <div>
@@ -479,15 +470,16 @@ export default function StudentStoragePage() {
 
                             <div>
                                 <Image
-                                    src="/images/kxh-student-storage-london.webp"
+                                    src="/images/kxh-moving-removals-london.webp"
                                     alt="Student moving service London"
-                                    className="w-full rounded-3xl border border-slate-200 shadow-xl object-cover h-auto"
+                                    className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                                     width={1200}
                                     height={800}
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                                     loading="lazy"
                                     decoding="async"
                                 />
+
                             </div>
                         </div>
                     </div>
@@ -584,6 +576,19 @@ export default function StudentStoragePage() {
                     </div>
                 </section>
 
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="Student storage without the van hire"
+                    intro="Pack your boxes and suitcases, and our team collects from your halls or flat, stores everything safely and brings it back for the new term."
+                    points={["Collection from halls and flats", "Summer and term-break storage", "Pay only for what you store", "Delivery to your new address"]}
+                    images={[
+                        { src: "/images/new-van.webp", alt: "KXH Storage & Logistics van outside a London apartment block", label: "Our own KXH vans" },
+                        { src: "/images/kxh-collection-delivery-london.webp", alt: "Student Storage London with KXH Storage & Logistics", label: "Halls and flat pickups" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=storage"
+                    ctaLabel="Get a Student Storage Quote"
+                />
                 <TestimonialsSection />
 
                 <section className="py-20 text-center bg-slate-50 border-t border-slate-200/70">
