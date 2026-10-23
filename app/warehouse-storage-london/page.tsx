@@ -1,3 +1,4 @@
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import AreaMapExplorer from "../components/AreaMapExplorer";
 import { Package as HIcPackage, Armchair as HIcArmchair, GraduationCap as HIcGraduationCap, Boxes as HIcBoxes } from "lucide-react";
@@ -254,19 +255,6 @@ export default function WarehouseStoragePage() {
             ))}
           </div>
         </section>
-        <section className="pb-16 max-w-5xl mx-auto px-4">
-          <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-lg">
-            <Image
-              src="/images/kxh-inventory-management-london.webp"
-              alt="Inventory management warehouse storage"
-              width={1200}
-              height={700}
-              quality={75}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="h-auto w-full object-cover"
-            />
-          </div>
-        </section>
         <section className="py-16 max-w-5xl mx-auto px-4 border-t border-slate-200">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold">
@@ -315,17 +303,6 @@ export default function WarehouseStoragePage() {
               {" "}for warehouse overflow, inventory coordination,
               and business delivery support.
             </p>
-            <div className="mt-10 overflow-hidden rounded-3xl border border-slate-200 shadow-lg">
-              <Image
-                src="/images/kxh-student-storage-london.webp"
-                alt="Student storage and apartment relocation services"
-                width={1200}
-                height={700}
-                quality={75}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="h-auto w-full object-cover"
-              />
-            </div>
           </div>
         </section>
         <section className="py-14 border-t border-slate-200/70 bg-slate-50">
@@ -343,17 +320,6 @@ export default function WarehouseStoragePage() {
                 across London.
               </p>
 
-            </div>
-            <div className="mb-10 overflow-hidden rounded-3xl border border-slate-200 shadow-lg">
-              <Image
-                src="/images/kxh-business-storage-london.webp"
-                alt="Business inventory warehouse storage in London"
-                width={1200}
-                height={700}
-                quality={75}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="w-full h-auto object-cover"
-              />
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
 
@@ -426,7 +392,6 @@ export default function WarehouseStoragePage() {
           </div>
         </section>
 
-
         {/* HOW IT WORKS */}
         <section className="py-20 max-w-5xl mx-auto px-4">
           <h2 className="text-3xl font-black text-center mb-4">
@@ -466,19 +431,19 @@ export default function WarehouseStoragePage() {
             ))}
           </div>
         </section>
-        <section className="pb-16 max-w-5xl mx-auto px-4">
-          <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-lg">
-            <Image
-              src="/images/new-van.webp"
-              alt="KXH Storage and Logistics warehouse team"
-              width={1200}
-              height={700}
-              quality={75}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="w-full h-auto object-cover"
-            />
-          </div>
-        </section>
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="Your own space in a managed London warehouse"
+                    intro="Everything we collect is logged, labelled and kept on racking in our warehouse, so it is easy to find and quick to deliver back."
+                    points={["Collection from your door", "Secure managed warehouse", "Flexible monthly storage", "Return delivery on request"]}
+                    images={[
+                        { src: "/images/warehouse.webp", alt: "Stock and boxes stored on racking in the KXH London warehouse", label: "Inside our warehouse" },
+                        { src: "/images/kxh-inventory-management-london.webp", alt: "Warehouse Storage London with KXH Storage & Logistics", label: "Organised racking" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=storage"
+                    ctaLabel="Get a Storage Quote"
+                />
         <section id="areas" className="border-t border-slate-200/70 bg-slate-50 py-16 lg:py-24">
                     <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                         <div className="kxh-reveal max-w-3xl">
