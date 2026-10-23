@@ -610,7 +610,7 @@ function ServiceJsonLd() {
             "@id": "https://kxhlogistics.co.uk/#business",
             name: "KXH Storage & Logistics",
             url: "https://kxhlogistics.co.uk",
-            telephone: "+44 7386 277785",
+            telephone: "+44 20 3916 5312",
         },
 
         areaServed: {
