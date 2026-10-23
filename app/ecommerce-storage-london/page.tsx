@@ -1,3 +1,4 @@
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import { ShoppingCart as HIcShoppingCart, Package as HIcPackage, RotateCcw as HIcRotateCcw, CalendarRange as HIcCalendarRange } from "lucide-react";
 import type { Metadata } from "next";
@@ -714,13 +715,13 @@ export default function EcommerceStorageLondonPage() {
                 <section className="border-y border-slate-200 bg-white py-16 lg:py-24">
                     <div className="mx-auto grid max-w-screen-xl items-center gap-10 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
                         <Image
-                            src="/images/kxh-third-party-logistics-london.webp"
+                            src="/images/kxh-inventory-management-london.webp"
                             alt="Organised ecommerce products and packaging stored in a London warehouse"
                             width={1200}
                             height={800}
                             quality={75}
                             sizes="(max-width: 1024px) 100vw, 50vw"
-                            className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+                            className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                             loading="lazy"
                             decoding="async"
                         />
@@ -859,17 +860,6 @@ export default function EcommerceStorageLondonPage() {
                 {/* OPERATIONS AND USE CASES */}
                 <section className="border-y border-slate-200 bg-white py-16 lg:py-24">
                     <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-                        <Image
-                            src="/images/kxh-third-party-logistics-london.webp"
-                            alt="Warehouse team organising ecommerce stock in London"
-                            width={1200}
-                            height={800}
-                            quality={75}
-                            sizes="(max-width: 768px) 100vw, 960px"
-                            className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
-                            loading="lazy"
-                            decoding="async"
-                        />
 
                         <div className="mx-auto mt-12 max-w-2xl text-center">
                             <p className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">
@@ -1315,23 +1305,19 @@ export default function EcommerceStorageLondonPage() {
                     </div>
                 </section>
 
-                {/* DELIVERY IMAGE */}
-                <section className="bg-slate-50 py-16 lg:py-24">
-                    <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-                        <Image
-                            src="/images/kxh-third-party-logistics-london.webp"
-                            alt="Ecommerce inventory collection and return delivery service in London"
-                            width={1200}
-                            height={800}
-                            quality={75}
-                            sizes="(max-width: 768px) 100vw, 960px"
-                            className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
-                            loading="lazy"
-                            decoding="async"
-                        />
-                    </div>
-                </section>
-
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="Ecommerce stock stored close to your customers"
+                    intro="Keep inventory in London, cut storage costs and get stock delivered back when orders pick up."
+                    points={["Stock and packaging storage", "Organised inventory", "Seasonal peaks covered", "Collection and delivery"]}
+                    images={[
+                        { src: "/images/warehouse.webp", alt: "Stock and boxes stored on racking in the KXH London warehouse", label: "Inside our warehouse" },
+                        { src: "/images/kxh-collection-delivery-london.webp", alt: "Ecommerce Storage London with KXH Storage & Logistics", label: "Online seller stock" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=storage"
+                    ctaLabel="Get an Ecommerce Storage Quote"
+                />
                 <TestimonialsSection />
 
                 {/* FINAL CTA */}
