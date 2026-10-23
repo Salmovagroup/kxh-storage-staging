@@ -33,7 +33,7 @@ export default function RevealObserver() {
                     }
                 });
             },
-            { rootMargin: "200px 0px 200px 0px", threshold: 0 },
+            { rootMargin: "0px 0px 320px 0px", threshold: 0 },
         );
         items.forEach((el) => {
             if (!el.classList.contains("is-in")) io.observe(el);
