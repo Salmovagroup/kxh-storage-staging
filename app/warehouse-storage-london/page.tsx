@@ -147,15 +147,6 @@ export default function WarehouseStoragePage() {
     <>
       <CrispChat />
       <Nav />
-      <nav className="max-w-5xl mx-auto px-4 pt-6 text-sm text-slate-500">
-        <Link href="/">Home</Link>
-        <span className="mx-2">/</span>
-        <Link href="/services">Services</Link>
-        <span className="mx-2">/</span>
-        <span className="text-slate-700 font-medium">
-          Warehouse Storage London
-        </span>
-      </nav>
 
       {/* HERO */}
       <main className="min-h-screen bg-white text-slate-900">
