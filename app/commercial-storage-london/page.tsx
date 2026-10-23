@@ -1,3 +1,4 @@
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import AreaMapExplorer from "../components/AreaMapExplorer";
 import { Boxes as HIcBoxes, Wrench as HIcWrench, Armchair as HIcArmchair, Archive as HIcArchive } from "lucide-react";
@@ -400,8 +401,9 @@ function CommercialOverview() {
             height={600}
             loading="lazy"
             sizes="(min-width: 1024px) 50vw, 100vw"
-            className="aspect-[3/2] w-full object-cover"
+            className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
           />
+
         </div>
 
         <div>
@@ -985,23 +987,7 @@ function LocationsSection() {
 }
 
 function TeamSection() {
-  return (
-    <section className="border-t border-slate-200 bg-slate-50 py-16 lg:py-24">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <Image
-          src="/images/new-van.webp"
-          alt="KXH warehouse team supporting commercial storage customers in London"
-          width={1400}
-          height={800}
-          quality={75}
-          sizes="(max-width: 768px) 100vw, 960px"
-          className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-    </section>
-  );
+  return null;
 }
 
 function FaqSection() {
@@ -1098,6 +1084,19 @@ export default function CommercialStoragePage() {
         <IndustryLinksSection />
         <RelatedServicesSection />
         <TeamSection />
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="Commercial storage handled by our own team"
+                    intro="From overflow stock to office equipment, we collect it, store it securely and deliver it back on your schedule."
+                    points={["No extra lease", "Scale up or down", "Collection from your site", "Return delivery available"]}
+                    images={[
+                        { src: "/images/warehouse.webp", alt: "Stock and boxes stored on racking in the KXH London warehouse", label: "Inside our warehouse" },
+                        { src: "/images/kxh-collection-delivery-london.webp", alt: "Commercial Storage London with KXH Storage & Logistics", label: "Business space" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=storage"
+                    ctaLabel="Get a Commercial Storage Quote"
+                />
         <section id="areas" className="border-t border-slate-200/70 bg-slate-50 py-16 lg:py-24">
                     <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                         <div className="kxh-reveal max-w-3xl">
