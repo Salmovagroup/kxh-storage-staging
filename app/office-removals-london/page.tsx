@@ -1,3 +1,4 @@
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import { Monitor as HIcMonitor, Armchair as HIcArmchair, Archive as HIcArchive, Warehouse as HIcWarehouse } from "lucide-react";
 import type { Metadata } from "next";
@@ -763,10 +764,11 @@ function ManagedRelocationSection() {
                     height={800}
                     quality={75}
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+                    className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                     loading="lazy"
                     decoding="async"
                 />
+
                 <div>
                     <p className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-700">More Than an Office Moving Company</p>
                     <h2 id="managed-office-relocation" className="mt-4 text-3xl font-black text-slate-950 sm:text-4xl">One Partner for Removals, Storage, Organisation and Delivery</h2>
@@ -928,10 +930,11 @@ function DeliverySection() {
                     height={800}
                     quality={75}
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+                    className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                     loading="lazy"
                     decoding="async"
                 />
+
             </div>
         </section>
     );
@@ -1058,6 +1061,19 @@ export default function OfficeRelocationLondonPage() {
                 <DeliverySection />
                 <LondonCoverageSection />
                 <RelatedServicesSection />
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="Office moves with minimal downtime"
+                    intro="Desks, IT and files are packed, labelled and moved to plan, with storage for anything you are not ready to unpack."
+                    points={["Move planning", "IT and furniture", "Evening and weekend moves", "Storage available"]}
+                    images={[
+                        { src: "/images/new-van.webp", alt: "KXH Storage & Logistics van outside a London apartment block", label: "Our own KXH vans" },
+                        { src: "/images/kxh-collection-delivery-london.webp", alt: "Office Removals London with KXH Storage & Logistics", label: "Office relocation" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=moving"
+                    ctaLabel="Get an Office Removals Quote"
+                />
                 <TestimonialsSection />
                 <FinalCallToActionSection />
                 <OfficeRelocationFaqsSection />
