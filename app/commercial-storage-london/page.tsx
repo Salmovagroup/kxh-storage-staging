@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/commercial-storage/commercial-storage-hero.webp",
+        url: "/images/kxh-commercial-storage-london.webp",
         width: 1400,
         height: 800,
         alt: "Managed commercial warehouse storage in London",
