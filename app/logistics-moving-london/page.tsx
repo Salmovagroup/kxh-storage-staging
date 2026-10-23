@@ -26,7 +26,7 @@ export const metadata: Metadata = {
             "Plan a London move with packing, loading, transport, delivery and optional temporary storage coordinated by one team.",
         images: [
             {
-                url: "/images/moving-services/moving-services-hero.webp",
+                url: "/images/kxh-moving-removals-london.webp",
                 width: 1200,
                 height: 630,
                 alt: "KXH movers completing a managed move in London",
