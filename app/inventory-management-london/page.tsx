@@ -1,3 +1,4 @@
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import AreaMapExplorer from "../components/AreaMapExplorer";
 import { ClipboardList as HIcClipboardList, ScanLine as HIcScanLine, PackageCheck as HIcPackageCheck, Truck as HIcTruck } from "lucide-react";
@@ -587,13 +588,14 @@ function PhysicalInventoryExplanation() {
         </div>
 
         <Image
-          src="/images/kxh-inventory-management-london.webp"
+          src="/images/kxh-business-storage-london.webp"
           alt="Business inventory grouped and organised inside a London warehouse"
           width={1200}
           height={900}
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+          className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
         />
+
       </div>
     </section>
   );
@@ -874,13 +876,14 @@ function PalletStorageSection() {
         </div>
 
         <Image
-          src="/images/kxh-inventory-management-london.webp"
+          src="/images/kxh-collection-delivery-london.webp"
           alt="Warehouse inventory support for bulk cartons and palletised stock in London"
           width={1200}
           height={900}
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+          className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
         />
+
       </div>
     </section>
   );
@@ -989,7 +992,7 @@ function TeamTrustSection() {
           width={1200}
           height={900}
           sizes="(max-width: 1024px) 100vw, 52vw"
-          className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+          className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
         />
 
         <div>
@@ -1115,6 +1118,19 @@ export default function InventoryManagementPage() {
         <LondonCoverageSection />
         <RelatedServicesSection />
         <TeamTrustSection />
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="Stock kept organised and easy to find"
+                    intro="We group, label and store your inventory so you always know what is in storage and can call it back quickly."
+                    points={["Item records and categories", "Selected-item returns", "Boxes, cartons and pallets", "Collection and delivery"]}
+                    images={[
+                        { src: "/images/warehouse.webp", alt: "Stock and boxes stored on racking in the KXH London warehouse", label: "Inside our warehouse" },
+                        { src: "/images/kxh-collection-delivery-london.webp", alt: "Inventory Management London with KXH Storage & Logistics", label: "Labelled stock" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=storage"
+                    ctaLabel="Get an Inventory Storage Quote"
+                />
         <section id="areas" className="border-t border-slate-200/70 bg-slate-50 py-16 lg:py-24">
                     <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                         <div className="kxh-reveal max-w-3xl">
