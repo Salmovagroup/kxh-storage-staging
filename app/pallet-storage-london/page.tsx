@@ -1,3 +1,4 @@
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import AreaMapExplorer from "../components/AreaMapExplorer";
 import { Layers as HIcLayers, ShoppingCart as HIcShoppingCart, Store as HIcStore, Boxes as HIcBoxes } from "lucide-react";
@@ -171,9 +172,9 @@ export default function PalletStoragePage() {
 
             <div>
               <Image
-                src="/images/kxh-pallet-storage-london.webp"
+                src="/images/kxh-inventory-management-london.webp"
                 alt="Commercial pallet storage for business stock and inventory"
-                className="w-full rounded-3xl border border-slate-200 shadow-lg"
+                className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                 width={1200}
                 height={800}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -193,20 +194,6 @@ export default function PalletStoragePage() {
                 </ul>
               </div>
             </div>
-          </div>
-        </section>
-        <section className="py-16 bg-white">
-          <div className="max-w-screen-xl mx-auto px-4">
-            <Image
-              src="/images/kxh-pallet-storage-london.webp"
-              alt="Warehouse worker handling palletised inventory"
-              className="w-full rounded-3xl border border-slate-200 shadow-lg"
-              width={1200}
-              height={800}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-              loading="lazy"
-              decoding="async"
-            />
           </div>
         </section>
         <section className="py-16 border-t border-slate-200/70 bg-slate-50">
@@ -394,20 +381,19 @@ export default function PalletStoragePage() {
             </div>
           </div>
         </section>
-        <section className="py-16 bg-white border-t border-slate-200/70">
-          <div className="max-w-screen-xl mx-auto px-4">
-            <Image
-              src="/images/kxh-pallet-storage-london.webp"
-              alt="Pallet storage collection and delivery service"
-              className="w-full rounded-3xl border border-slate-200 shadow-lg"
-              width={1200}
-              height={800}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </section>
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="Pallet space that grows with your stock"
+                    intro="Palletised goods are received, logged and stored on warehouse racking, then delivered to you or your customers when needed."
+                    points={["Pay per pallet", "Collection and delivery", "Organised warehouse handling", "Short or long term"]}
+                    images={[
+                        { src: "/images/warehouse.webp", alt: "Stock and boxes stored on racking in the KXH London warehouse", label: "Inside our warehouse" },
+                        { src: "/images/kxh-collection-delivery-london.webp", alt: "Pallet Storage London with KXH Storage & Logistics", label: "Pallet racking" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=storage"
+                    ctaLabel="Get a Pallet Storage Quote"
+                />
         <section id="areas" className="border-t border-slate-200/70 bg-slate-50 py-16 lg:py-24">
                     <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                         <div className="kxh-reveal max-w-3xl">
@@ -421,20 +407,6 @@ export default function PalletStoragePage() {
                     </div>
                 </section>
                 <TestimonialsSection />
-        <section className="py-16 bg-white">
-          <div className="max-w-5xl mx-auto px-4">
-            <Image
-              src="/images/new-van.webp"
-              alt="KXH Logistics pallet storage warehouse team"
-              className="w-full rounded-3xl border border-slate-200 shadow-lg"
-              width={1200}
-              height={800}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </section>
         <section className="py-20 text-center bg-slate-50 border-t border-slate-200/70">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-3xl font-black">
