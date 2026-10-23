@@ -1,3 +1,4 @@
+import ServiceShowcase from "../components/ServiceShowcase";
 import ServiceHero from "../components/ServiceHero";
 import { Archive as HIcArchive, Scale as HIcScale, Landmark as HIcLandmark, FileText as HIcFileText } from "lucide-react";
 import type { Metadata } from "next";
@@ -490,7 +491,6 @@ function WebPageJsonLd() {
     return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
 
-
 type SectionHeadingProps = {
     eyebrow?: string;
     title: ReactNode;
@@ -799,7 +799,7 @@ function ManagedStorageSection() {
                     height={800}
                     quality={75}
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
+                    className="kxh-reveal h-64 w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5 sm:h-80 lg:h-[420px]"
                     loading="lazy"
                     decoding="async"
                 />
@@ -967,17 +967,6 @@ function UseCasesSection() {
     return (
         <section className="border-y border-slate-200 bg-white py-16 lg:py-24">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-                <Image
-                    src="/images/kxh-inventory-management-london.webp"
-                    alt="Managed archive warehouse storing labelled business document boxes in London"
-                    width={1200}
-                    height={800}
-                    quality={75}
-                    sizes="(max-width: 768px) 100vw, 960px"
-                    className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
-                    loading="lazy"
-                    decoding="async"
-                />
 
                 <div className="mt-12">
                     <SectionHeading
@@ -1721,23 +1710,7 @@ function RelatedServicesSection() {
 }
 
 function DeliveryImageSection() {
-    return (
-        <section className="bg-slate-50 py-16 lg:py-24">
-            <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-                <Image
-                    src="/images/new-van.webp"
-                    alt="KXH archive collection and document return delivery service in London"
-                    width={1200}
-                    height={800}
-                    quality={75}
-                    sizes="(max-width: 768px) 100vw, 960px"
-                    className="kxh-reveal h-auto w-full rounded-[1.75rem] object-cover shadow-2xl"
-                    loading="lazy"
-                    decoding="async"
-                />
-            </div>
-        </section>
-    );
+    return null;
 }
 
 function FinalCtaSection() {
@@ -1863,6 +1836,19 @@ export default function ArchiveStorageLondonPage() {
                 <LondonCoverageSection />
                 <RelatedServicesSection />
                 <DeliveryImageSection />
+                <ServiceShowcase
+                    eyebrow="See it in action"
+                    title="Business archives stored and easy to retrieve"
+                    intro="Archive boxes are labelled, stored securely and returned when you need a file, so your office stays clear."
+                    points={["Secure document storage", "Organised archive boxes", "File retrieval on request", "Secure shredding available"]}
+                    images={[
+                        { src: "/images/warehouse.webp", alt: "Stock and boxes stored on racking in the KXH London warehouse", label: "Inside our warehouse" },
+                        { src: "/images/kxh-collection-delivery-london.webp", alt: "Archive Storage London with KXH Storage & Logistics", label: "Archive boxes" },
+                        { src: "/images/delivery-warehouse.webp", alt: "Branded KXH Storage & Logistics van ready for collection and delivery", label: "Collection & delivery" },
+                    ]}
+                    ctaHref="/get-a-quote?service=storage"
+                    ctaLabel="Get an Archive Storage Quote"
+                />
                 <TestimonialsSection />
                 <FinalCtaSection />
                 <FaqSection />
