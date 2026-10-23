@@ -1813,7 +1813,7 @@ function MovingTeamSection() {
                         height={700}
                         quality={75}
                         sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="kxh-reveal kxh-card3d h-full w-full rounded-[1.75rem] object-cover shadow-2xl"
+                        className="kxh-reveal kxh-card3d h-[300px] w-full rounded-[1.75rem] object-cover shadow-2xl sm:h-[380px]"
                         loading="lazy"
                         decoding="async"
                     />
@@ -1824,7 +1824,7 @@ function MovingTeamSection() {
                         height={700}
                         quality={75}
                         sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="kxh-reveal kxh-card3d h-full w-full rounded-[1.75rem] object-cover shadow-2xl"
+                        className="kxh-reveal kxh-card3d h-[300px] w-full rounded-[1.75rem] object-cover shadow-2xl sm:h-[380px]"
                         loading="lazy"
                         decoding="async"
                     />
