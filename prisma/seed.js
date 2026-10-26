@@ -366,6 +366,19 @@ async function seedAdminUser() {
 }
 
 async function main() {
+  // Salmova staging (Netlify): the staging database holds a restored copy of the developer's
+  // data (real prices, capacity, time slots). Do not overwrite it with defaults on every build;
+  // only seed when the database is empty, and always lock the default admin.
+  if (process.env.NETLIFY === "true") {
+    const existingItems = await prisma.serviceItem.count();
+    if (existingItems > 0) {
+      console.log("🌱 Staging: data already present, skipping default prices/settings seed");
+      await seedAdminUser();
+      console.log("✅ Seed Complete (staging, admin only)");
+      return;
+    }
+  }
+
   console.log("🌱 Seeding Database...");
   await seedTimeSlots();
   await seedServiceItemsAndPrices();
