@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   // Salmova staging (Netlify) is noindex; the live site keeps full indexing.
   robots:
-    (process.env.NETLIFY === "true" || (process.env.NEXT_PUBLIC_APP_URL ?? "").includes("netlify.app"))
+    (process.env.NETLIFY === "true" || process.env.KXH_STAGING === "true" || /netlify\.app|vercel\.app/.test(process.env.NEXT_PUBLIC_APP_URL ?? ""))
       ? { index: false, follow: false, googleBot: { index: false, follow: false } }
       : {
           index: true,
