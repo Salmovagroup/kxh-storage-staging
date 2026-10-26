@@ -41,7 +41,7 @@ const nextConfig: NextConfig = {
             value: "public, max-age=0, must-revalidate",
           },
           // Salmova staging (Netlify only): tell search engines not to index this copy.
-          ...((process.env.NETLIFY === "true" || (process.env.NEXT_PUBLIC_APP_URL ?? "").includes("netlify.app"))
+          ...((process.env.NETLIFY === "true" || process.env.KXH_STAGING === "true" || /netlify\.app|vercel\.app/.test(process.env.NEXT_PUBLIC_APP_URL ?? ""))
             ? [{ key: "X-Robots-Tag", value: "noindex, nofollow" }]
             : []),
         ],
