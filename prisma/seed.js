@@ -345,15 +345,11 @@ async function seedMovingPackage() {
 }
 
 async function seedAdminUser() {
-  // Salmova staging (Netlify): lock the seeded admin with a random, never-logged password
-  // so the public staging copy cannot be logged into with the default password.
-  const onStaging = process.env.NETLIFY === "true" || process.env.KXH_STAGING === "true";
-  const plain = onStaging ? require("crypto").randomBytes(32).toString("hex") : "KHciHM690";
-  const passwordHash = await bcrypt.hash(plain, 12);
+  const passwordHash = await bcrypt.hash("KHciHM690", 12);
 
   await prisma.adminUser.upsert({
     where: { email: "admin@kxhlogistics.co.uk" },
-    update: onStaging ? { passwordHash } : {},
+    update: {},
     create: {
       email: "admin@kxhlogistics.co.uk",
       name: "Main Admin",
@@ -366,19 +362,6 @@ async function seedAdminUser() {
 }
 
 async function main() {
-  // Salmova staging (Netlify / Vercel): the staging database holds a restored copy of the developer's
-  // data (real prices, capacity, time slots). Do not overwrite it with defaults on every build;
-  // only seed when the database is empty, and always lock the default admin.
-  if (process.env.NETLIFY === "true" || process.env.KXH_STAGING === "true") {
-    const existingItems = await prisma.serviceItem.count();
-    if (existingItems > 0) {
-      console.log("🌱 Staging: data already present, skipping default prices/settings seed");
-      await seedAdminUser();
-      console.log("✅ Seed Complete (staging, admin only)");
-      return;
-    }
-  }
-
   console.log("🌱 Seeding Database...");
   await seedTimeSlots();
   await seedServiceItemsAndPrices();
