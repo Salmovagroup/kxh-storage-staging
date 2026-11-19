@@ -1,10 +1,3 @@
-export const metadata = {
-  title: "Terms and Conditions",
-  description:
-    "Terms and conditions for KXH Storage & Logistics storage, collection, delivery and logistics services.",
-  alternates: { canonical: "https://kxhlogistics.co.uk/terms" },
-};
-
 export default function TermsPage() {
   return (
     <main className="min-h-screen bg-white text-slate-800">

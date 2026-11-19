@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     "warehouse storage",
     "UK storage service",
   ],
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "/",
