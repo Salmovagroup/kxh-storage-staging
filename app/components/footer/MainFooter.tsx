@@ -1,7 +1,6 @@
 import Link from "next/link";
-import FloatingTrustpilot from "../trustpilot/FloatingTrustpilot";
 import SocialLinks from "../SocialLinks";
-import { CONTACT_NUMBERS } from "@/app/lib/contact";
+import { CONTACT_EMAILS, CONTACT_NUMBERS } from "@/app/lib/contact";
 
 type Location = {
   name: string;
@@ -144,6 +143,20 @@ export default function MainFooter({
                       className="transition hover:text-emerald-700"
                     >
                       {contact.phone}
+                    </a>
+                  </span>
+                ))}
+              </p>
+              <p>
+                <span className="font-semibold text-slate-900">Email:</span>{" "}
+                {CONTACT_EMAILS.map((email, index) => (
+                  <span key={email}>
+                    {index > 0 && ", "}
+                    <a
+                      href={`mailto:${email}`}
+                      className="transition hover:text-emerald-700"
+                    >
+                      {email}
                     </a>
                   </span>
                 ))}
@@ -302,12 +315,6 @@ export default function MainFooter({
         )}
       </div>
 
-      {/* TRUSTPILOT */}
-      <div className="border-t border-slate-200 bg-slate-50 px-5 py-6">
-        <div className="flex justify-center">
-          <FloatingTrustpilot />
-        </div>
-      </div>
 
       {/* BOTTOM BAR */}
       <div className="border-t border-slate-200">

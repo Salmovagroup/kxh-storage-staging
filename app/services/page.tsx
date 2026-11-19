@@ -3,8 +3,6 @@ import MainFooter from "@/app/components/footer/MainFooter";
 import Nav from "@/app/components/MobileNav";
 import Link from "next/link";
 import { londonLocations } from "../sitemap";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
-import TestimonialsSection from "../components/TestimonialsSection";
 import Image from "next/image";
 
 export const metadata = {
@@ -237,9 +235,6 @@ export default function ServicesPage() {
                                 Get Quote
                             </Link>
                         </div>
-                        <div className="mt-4 flex justify-center">
-                            <TrustpilotPill />
-                        </div>
                         <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
                             <Image
                                 src="/images/services/services-hero.webp"
@@ -400,7 +395,6 @@ export default function ServicesPage() {
                                 className="w-full h-auto object-cover"
                             />
                         </div>
-                        <TestimonialsSection />
 
                     </div>
                 </section>

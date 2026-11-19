@@ -5,9 +5,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import { londonLocations } from "../sitemap";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
@@ -556,7 +553,6 @@ export default function EcommerceStorageLondonPage() {
                 <ServiceJsonLd />
                 <FAQJsonLd />
                 <BreadcrumbJsonLd />
-                <TrustpilotJsonLd />
 
                 {/* BREADCRUMB */}
                 <nav
@@ -636,10 +632,6 @@ export default function EcommerceStorageLondonPage() {
                                     Call {contact.label}
                                 </a>
                             ))}
-                        </div>
-
-                        <div className="mt-6 flex justify-center">
-                            <TrustpilotPill />
                         </div>
 
                         <div className="mt-12">
@@ -1405,7 +1397,6 @@ export default function EcommerceStorageLondonPage() {
                     </div>
                 </section>
 
-                <TestimonialsSection />
 
                 {/* FINAL CTA */}
                 <section className="border-t border-emerald-800 bg-emerald-800 py-14 text-center text-white sm:py-20">

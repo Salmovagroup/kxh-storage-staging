@@ -6,9 +6,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import { londonLocations } from "../sitemap";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
@@ -969,10 +966,6 @@ function HeroSection() {
                     Not sure how many boxes or rooms are involved? An estimate is enough to begin.
                 </p>
 
-                <div className="mt-6 flex justify-center">
-                    <TrustpilotPill />
-                </div>
-
                 <div className="mt-12">
                     <Image
                         src="/images/moving-services/moving-services-hero.webp"
@@ -1709,7 +1702,6 @@ export default function PackingServicesLondonPage() {
                 <FAQJsonLd />
                 <BreadcrumbJsonLd />
                 <WebPageJsonLd />
-                <TrustpilotJsonLd />
 
                 <PageBreadcrumb />
                 <HeroSection />
@@ -1735,7 +1727,6 @@ export default function PackingServicesLondonPage() {
                 <CustomerFitSection />
                 <LondonCoverageSection />
                 <RelatedServicesSection />
-                <TestimonialsSection />
                 <FinalCtaSection />
                 <FaqSection />
 

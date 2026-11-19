@@ -3,8 +3,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import Nav from "../components/MobileNav";
 import MainFooter from "../components/footer/MainFooter";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import { londonLocations } from "../sitemap";
 import Image from "next/image";
 
@@ -149,9 +147,6 @@ export default function PalletStoragePage() {
               </Link>
             </div>
 
-            <div className="mt-6 flex justify-center">
-              <TrustpilotPill />
-            </div>
             <div className="mt-12">
               <Image
                 src="/images/pallet-storage/pallet-storage-london-bulk-warehouse.webp"
@@ -445,7 +440,6 @@ export default function PalletStoragePage() {
             />
           </div>
         </section>
-        <TestimonialsSection />
         <section className="py-16 bg-white">
           <div className="max-w-5xl mx-auto px-4">
             <Image

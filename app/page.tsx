@@ -7,8 +7,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { londonLocations } from "./lib/location";
 import MainFooter from "./components/footer/MainFooter";
-import TestimonialsSection from "./components/TestimonialsSection";
-import TrustpilotPill from "./components/trustpilot/TrustpilotPill";
 import Image from "next/image";
 import { CONTACT_NUMBERS } from "./lib/contact";
 import { Star } from "lucide-react";
@@ -102,15 +100,6 @@ function JsonLd() {
             availableLanguage: "English",
         },
 
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            reviewCount: "66",
-        },
-
-        sameAs: [
-            "https://uk.trustpilot.com/review/kxhlogistics.co.uk",
-        ],
 
         makesOffer: [
             { "@type": "Offer", name: "Storage Service London" },
@@ -378,12 +367,6 @@ export default async function HomePage() {
 
                         {/* REVIEW BADGES - CENTERED ABOVE LEFT + RIGHT */}
                         <div className="flex w-full flex-col items-center justify-center gap-2 sm:flex-row sm:gap-4 lg:col-span-2">
-
-                            {/* Trustpilot */}
-                            <div className="flex h-[52px] items-start justify-center">
-                                <TrustpilotPill />
-                            </div>
-                            
                             {/* Google */}
                             <a
                                 href="https://www.google.com/maps/place/KXH+Storage+and+Logistics/@51.4005411,-1.5718478,8z/data=!3m1!4b1!4m6!3m5!1s0x47d8b51f343bb04f:0x23adefcf1e4277f3!8m2!3d51.4062307!4d-0.2527389!16s%2Fg%2F11y92dhgp4?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D"
@@ -1074,7 +1057,6 @@ export default async function HomePage() {
                         </div>
                     </div>
                 </section>
-                <TestimonialsSection />
                 <section className="border-t border-slate-200/70 bg-white">
                     <div className="mx-auto max-w-screen-xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
                         <div className="max-w-4xl">

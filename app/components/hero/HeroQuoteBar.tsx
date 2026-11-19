@@ -3,8 +3,6 @@
 import React, { useMemo, useRef } from "react";
 import { useCheckout, type ServiceType } from "../checkout/CheckoutStore";
 import { HERO_BY_SERVICE } from "./hero.config";
-import TrustpilotPill from "../trustpilot/TrustpilotPill";
-
 const SERVICE_META: Record<
     ServiceType,
     {
@@ -294,10 +292,7 @@ export function HeroQuoteBar() {
                                 </a>
                             </div>
 
-                            <div className="flex justify-center lg:justify-center">
-                                <TrustpilotPill />
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

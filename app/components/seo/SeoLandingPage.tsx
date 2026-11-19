@@ -4,9 +4,6 @@ import Link from "next/link";
 import CrispChat from "../chat/CrispChat";
 import MainFooter from "../footer/MainFooter";
 import Nav from "../MobileNav";
-import TestimonialsSection from "../TestimonialsSection";
-import TrustpilotPill from "../trustpilot/TrustpilotPill";
-import TrustpilotJsonLd from "./TrustPilotJsonLD";
 import { londonLocations } from "../../lib/location";
 import { CONTACT_NUMBERS } from "../../lib/contact";
 import { SITE, type SeoLandingData } from "../../lib/seo-types";
@@ -56,7 +53,6 @@ export default function SeoLandingPage({ page }: { page: SeoLandingData }) {
       <main className="min-h-screen bg-white text-slate-900">
         <JsonLd data={service} />
         <JsonLd data={breadcrumb} />
-        <TrustpilotJsonLd />
 
         <nav
           aria-label="Breadcrumb"
@@ -97,9 +93,6 @@ export default function SeoLandingPage({ page }: { page: SeoLandingData }) {
                   Call {contact.label}
                 </a>
               ))}
-            </div>
-            <div className="mt-6 flex justify-center">
-              <TrustpilotPill />
             </div>
             <div className="mt-12">
               <Image
@@ -163,7 +156,6 @@ export default function SeoLandingPage({ page }: { page: SeoLandingData }) {
           </section>
         </article>
 
-        <TestimonialsSection />
 
         <section className="border-t border-emerald-800 bg-emerald-800 py-14 text-center text-white sm:py-20">
           <div className="mx-auto max-w-2xl px-5 sm:px-6 lg:px-8">

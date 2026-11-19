@@ -4,9 +4,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import { londonLocations } from "../sitemap";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
@@ -568,10 +565,6 @@ function HeroSection() {
           >
             How Inventory Storage Works
           </Link>
-        </div>
-
-        <div className="mt-6 flex justify-center">
-          <TrustpilotPill />
         </div>
 
         <div className="mt-12">
@@ -1162,7 +1155,6 @@ export default function InventoryManagementPage() {
 
       <main className="min-h-screen bg-white text-slate-900">
         <JsonLd />
-        <TrustpilotJsonLd />
         <Breadcrumbs />
         <HeroSection />
         <BenefitsStrip />
@@ -1177,7 +1169,6 @@ export default function InventoryManagementPage() {
         <LondonCoverageSection />
         <RelatedServicesSection />
         <TeamTrustSection />
-        <TestimonialsSection />
         <FinalCtaSection />
         <FaqSection />
         <MainFooter locations={londonLocations} />

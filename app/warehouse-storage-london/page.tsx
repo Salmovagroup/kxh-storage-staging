@@ -3,11 +3,7 @@ import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
 import Link from "next/link";
 import { londonLocations } from "../lib/location";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import Image from "next/image";
-import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-
 export const metadata = {
   title: "Managed Warehouse Storage in London with Pickup & Delivery | KXH Logistics",
   description:
@@ -159,7 +155,6 @@ export default function WarehouseStoragePage() {
         <JsonLd />
         <FAQJsonLd />
         <BreadcrumbJsonLd />
-        <TrustpilotJsonLd />
         <section className="relative bg-gradient-to-b from-slate-50 to-white py-20 lg:py-28">
           <div className="mx-auto max-w-5xl px-4 text-center">
 
@@ -187,11 +182,6 @@ export default function WarehouseStoragePage() {
                 Get Quote
               </Link>
 
-            </div>
-
-            {/* Trustpilot */}
-            <div className="mt-6 flex justify-center">
-              <TrustpilotPill />
             </div>
             <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
               <Image
@@ -512,7 +502,6 @@ export default function WarehouseStoragePage() {
             />
           </div>
         </section>
-        <TestimonialsSection />
         {/* CTA */}
         <section className="py-20 text-center bg-slate-50">
           <h2 className="text-3xl font-bold">

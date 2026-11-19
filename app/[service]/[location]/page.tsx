@@ -1,16 +1,11 @@
 import CrispChat from "@/app/components/chat/CrispChat";
 import MainFooter from "@/app/components/footer/MainFooter";
 import Nav from "@/app/components/MobileNav";
-import TestimonialsSection from "@/app/components/TestimonialsSection";
-import TrustpilotPill from "@/app/components/trustpilot/TrustpilotPill";
 import { londonLocations } from "@/app/lib/location";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import TrustpilotJsonLd from "@/app/components/seo/TrustPilotJsonLD";
-
-
 type FAQ = {
     q: string;
     a: string;
@@ -1059,7 +1054,6 @@ function StructuredData({ service, location, content }: SectionProps) {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-            <TrustpilotJsonLd />
         </>
     );
 }
@@ -1125,8 +1119,7 @@ function LocationHero({ service, location, content }: SectionProps) {
                             See How It Works
                         </Link>
                     </div>
-                    <div className="mt-6 flex justify-center"><TrustpilotPill /></div>
-                </div>
+                    </div>
                 <Image
                     src={serviceImages[service]}
                     alt={`${content.label} service available in ${location.name}, London`}
@@ -1407,7 +1400,6 @@ export default async function LocationServicePage({ params }: PageProps) {
                 <WhyChooseSection service={service} location={location} content={content} />
                 {service === "business-storage-london" && <BusinessIndustrySection location={location} />}
                 <TeamSection location={location} content={content} />
-                <TestimonialsSection />
                 <RelatedServicesSection service={service} location={location} content={content} />
                 <FAQSection location={location} content={content} />
                 <LondonServiceAreasSection service={service} location={location} content={content} />
