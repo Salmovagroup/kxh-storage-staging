@@ -1,5 +1,8 @@
 export const metadata = {
-  title: "Refund Policy | KXH Logistics",
+  title: "Refund Policy",
+  description:
+    "Refund and cancellation terms for KXH Storage & Logistics storage, collection and delivery bookings.",
+  alternates: { canonical: "https://kxhlogistics.co.uk/refunds" },
 };
 
 export default function RefundPolicyPage() {

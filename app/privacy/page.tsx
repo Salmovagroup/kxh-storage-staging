@@ -1,5 +1,8 @@
 export const metadata = {
-  title: "Privacy Policy | KXH Logistics",
+  title: "Privacy Policy",
+  description:
+    "How KXH Storage & Logistics collects, uses and protects your personal data when you request a quote, book storage or contact us.",
+  alternates: { canonical: "https://kxhlogistics.co.uk/privacy" },
 };
 
 export default function PrivacyPage() {
