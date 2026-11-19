@@ -8,6 +8,22 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import Image from "next/image";
 import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
 
+export const metadata = {
+  title: "Secure Document Shredding London | Confidential Shredding with Collection",
+  description:
+    "Confidential document shredding in London with secure collection, certified destruction and full compliance. Get a quote from KXH Storage & Logistics.",
+  alternates: {
+    canonical: "https://kxhlogistics.co.uk/shredding-solutions-london",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://kxhlogistics.co.uk/shredding-solutions-london",
+    title: "Secure Document Shredding London | KXH Storage & Logistics",
+    description:
+      "Confidential document shredding with secure collection and certified destruction across London.",
+  },
+};
+
 function JsonLd() {
   const data = {
     "@context": "https://schema.org",

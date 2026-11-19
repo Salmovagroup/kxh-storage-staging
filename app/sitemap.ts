@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 
+import { blogPosts } from "./lib/blog-posts";
+import { seoLandingPages } from "./lib/seo-pages";
+
 const base = "https://kxhlogistics.co.uk";
 
 export const londonLocations = [
@@ -52,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/commercial-storage-london",
     "/third-party-logistics-london",
     "/ecommerce-storage-london",
-    "/retail-storage-london",
+    "/retail-stock-storage-london",
     "/office-removals-london",
     "/house-removals-london",
     "/moving-house-storage-london",
@@ -61,7 +64,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/event-equipment-storage-london",
     "/healthcare-storage-london",
     "/furniture-storage-london",
+    "/blog",
 
+    // Gap landing pages
+    ...seoLandingPages.map((p) => `/${p.slug}`),
+
+    // Blog posts
+    ...blogPosts.map((p) => `/blog/${p.slug}`),
   ].map((path) => ({
     url: `${base}${path}`,
     lastModified: now,
