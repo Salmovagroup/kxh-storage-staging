@@ -3,11 +3,7 @@ import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
 import Link from "next/link";
 import { londonLocations } from "../lib/location";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
-import TestimonialsSection from "../components/TestimonialsSection";
 import Image from "next/image";
-import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-
 export const metadata = {
   title: "Secure Document Shredding London | Confidential Shredding with Collection",
   description:
@@ -183,7 +179,6 @@ export default function ShreddingServicePage() {
         <JsonLd />
         <FAQJsonLd />
         <BreadcrumbJsonLd />
-        <TrustpilotJsonLd />
 
         {/* HERO */}
         <section className="relative bg-gradient-to-b from-slate-50 to-white py-16 lg:py-24">
@@ -222,9 +217,6 @@ export default function ShreddingServicePage() {
               >
                 Get Quote
               </Link>
-            </div>
-            <div className="mt-6 flex justify-center">
-              <TrustpilotPill />
             </div>
             <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
               <Image
@@ -536,7 +528,6 @@ export default function ShreddingServicePage() {
             />
           </div>
         </section>
-        <TestimonialsSection />
 
         {/* FINAL CTA */}
         <section className="py-16 text-center border-t border-slate-200/40 bg-white">

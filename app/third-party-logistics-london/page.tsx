@@ -3,13 +3,9 @@
 import CrispChat from "@/app/components/chat/CrispChat";
 import MainFooter from "@/app/components/footer/MainFooter";
 import Nav from "@/app/components/MobileNav";
-import TestimonialsSection from "@/app/components/TestimonialsSection";
-import TrustpilotPill from "@/app/components/trustpilot/TrustpilotPill";
 import { londonLocations } from "@/app/lib/location";
 import Link from "next/link";
 import Image from "next/image";
-import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-
 export const metadata = {
     title:
         "Third Party Logistics London | 3PL Warehouse, Inventory & Delivery | KXH",
@@ -101,7 +97,6 @@ export default function ThirdPartyLogisticsPage() {
             <main className="min-h-screen bg-white text-slate-900">
                 <JsonLd />
                 <FAQJsonLd />
-                <TrustpilotJsonLd />
 
                 <section className="relative bg-gradient-to-b from-slate-50 to-white py-20 lg:py-24">
                     <div className="max-w-5xl mx-auto px-4 text-center">
@@ -131,9 +126,6 @@ export default function ThirdPartyLogisticsPage() {
                             </Link>
                         </div>
 
-                        <div className="mt-6 flex justify-center">
-                            <TrustpilotPill />
-                        </div>
                         <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
                             <Image
                                 src="/images/third-party-logistics/3pl-hero-warehouse.webp"
@@ -357,7 +349,6 @@ export default function ThirdPartyLogisticsPage() {
                     </div>
                 </section>
 
-                <TestimonialsSection />
 
                 <section className="py-16 border-t border-slate-200/70 bg-white">
                     <div className="max-w-6xl mx-auto px-4">

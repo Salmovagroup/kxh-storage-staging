@@ -5,9 +5,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import { londonLocations } from "../lib/location";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
@@ -634,8 +631,6 @@ function HeroSection() {
                 </div>
 
                 <p className="mt-4 text-sm text-slate-500">Tell us your locations, office size, preferred dates, access requirements and whether temporary storage is needed.</p>
-                <div className="mt-6 flex justify-center"><TrustpilotPill /></div>
-
                 <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
                     <Image
                         src="/images/moving-services/moving-services-team-working.webp"
@@ -1087,7 +1082,6 @@ export default function OfficeRelocationLondonPage() {
                 <ServiceJsonLd />
                 <FAQJsonLd />
                 <BreadcrumbJsonLd />
-                <TrustpilotJsonLd />
 
                 <BreadcrumbNavigation />
                 <HeroSection />
@@ -1105,7 +1099,6 @@ export default function OfficeRelocationLondonPage() {
                 <DeliverySection />
                 <LondonCoverageSection />
                 <RelatedServicesSection />
-                <TestimonialsSection />
                 <FinalCallToActionSection />
                 <OfficeRelocationFaqsSection />
                 <MainFooter locations={londonLocations} />

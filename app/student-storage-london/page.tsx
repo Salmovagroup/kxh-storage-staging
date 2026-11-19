@@ -5,9 +5,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import Nav from "../components/MobileNav";
 import MainFooter from "../components/footer/MainFooter";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
-import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
 import { londonLocations } from "../lib/location";
 import Image from "next/image";
 
@@ -111,7 +108,6 @@ export default function StudentStoragePage() {
             <main className="min-h-screen bg-white text-slate-900">
                 <JsonLd />
                 <FAQJsonLd />
-                <TrustpilotJsonLd />
 
                 <section className="relative bg-gradient-to-b from-slate-50 to-white py-20 lg:py-28">
                     <div className="max-w-5xl mx-auto px-4 text-center">
@@ -145,10 +141,6 @@ export default function StudentStoragePage() {
                             >
                                 Student Moving Support
                             </Link>
-                        </div>
-
-                        <div className="mt-6 flex justify-center">
-                            <TrustpilotPill />
                         </div>
 
                         <div className="mt-12">
@@ -614,7 +606,6 @@ export default function StudentStoragePage() {
                     </div>
                 </section>
 
-                <TestimonialsSection />
 
                 <section className="py-20 text-center bg-slate-50 border-t border-slate-200/70">
                     <div className="max-w-3xl mx-auto px-4">

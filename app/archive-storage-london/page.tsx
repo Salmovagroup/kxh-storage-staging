@@ -6,9 +6,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import { londonLocations } from "../sitemap";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
@@ -632,10 +629,6 @@ function HeroSection() {
                             Call {contact.label}
                         </a>
                     ))}
-                </div>
-
-                <div className="mt-6 flex justify-center">
-                    <TrustpilotPill />
                 </div>
 
                 <div className="mt-12">
@@ -1906,7 +1899,6 @@ export default function ArchiveStorageLondonPage() {
                 <FAQJsonLd />
                 <BreadcrumbJsonLd />
                 <WebPageJsonLd />
-                <TrustpilotJsonLd />
 
                 <PageBreadcrumb />
                 <HeroSection />
@@ -1936,7 +1928,6 @@ export default function ArchiveStorageLondonPage() {
                 <LondonCoverageSection />
                 <RelatedServicesSection />
                 <DeliveryImageSection />
-                <TestimonialsSection />
                 <FinalCtaSection />
                 <FaqSection />
 

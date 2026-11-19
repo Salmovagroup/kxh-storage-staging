@@ -5,9 +5,7 @@ import MainFooter from "../components/footer/MainFooter";
 import { londonLocations } from "../sitemap";
 import CrispChat from "../components/chat/CrispChat";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
-import { CONTACT_NUMBERS } from "../lib/contact";
+import { CONTACT_EMAILS, CONTACT_NUMBERS } from "../lib/contact";
 
 const SITE_URL = "https://kxhlogistics.co.uk";
 const PHONE_DISPLAY = CONTACT_NUMBERS[0].phone;
@@ -18,8 +16,6 @@ const OPENING_HOURS = [
     { label: "Saturday", value: "9:00 AM–4:00 PM" },
     { label: "Sunday", value: "By appointment" },
 ];
-const TRUSTPILOT_RATING = "4.8";
-const TRUSTPILOT_REVIEW_COUNT = "66";
 
 
 
@@ -73,14 +69,14 @@ const contactMethods = [
         label: contact.phone,
         icon: "☎",
     })),
-    {
+    ...CONTACT_EMAILS.map((email) => ({
         title: "Email Our Team",
         description:
             "Ideal for detailed requirements, photos, inventory lists, access notes and business enquiries.",
-        href: `mailto:${EMAIL}`,
-        label: EMAIL,
+        href: `mailto:${email}`,
+        label: email,
         icon: "✉",
-    },
+    })),
     {
         title: "Request a Quote",
         description:
@@ -477,12 +473,6 @@ function LocalBusinessJsonLd() {
                 closes: "16:00",
             },
         ],
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: TRUSTPILOT_RATING,
-            reviewCount: TRUSTPILOT_REVIEW_COUNT,
-            bestRating: "5",
-        },
         contactPoint: [
             {
                 "@type": "ContactPoint",
@@ -657,10 +647,7 @@ export default function ContactPage() {
                             </a>
                         </div>
 
-                        <div className="mt-6 flex justify-center">
-                            <TrustpilotPill />
                         </div>
-                    </div>
                 </section>
 
                 <section className="border-b border-slate-200 bg-white py-6">
@@ -1307,7 +1294,6 @@ export default function ContactPage() {
                         </div>
                     </div>
                 </section>
-                <TestimonialsSection />
 
                 <section
                     aria-labelledby="contact-faq"

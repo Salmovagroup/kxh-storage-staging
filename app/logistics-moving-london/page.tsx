@@ -5,9 +5,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import { londonLocations } from "../lib/location";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
@@ -973,10 +970,6 @@ function HeroSection() {
                             Call {contact.label}
                         </a>
                     ))}
-                </div>
-
-                <div className="mt-6 flex justify-center">
-                    <TrustpilotPill />
                 </div>
 
                 <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
@@ -1978,7 +1971,6 @@ export default function MovingServicePage() {
                 <MovingExpansionPagesJsonLd />
                 <FAQJsonLd />
                 <BreadcrumbJsonLd />
-                <TrustpilotJsonLd />
 
                 <BreadcrumbNav />
                 <MovingServiceLinks className="mx-auto max-w-6xl px-5 pb-5 pt-4 sm:px-6 lg:px-8" />
@@ -2012,7 +2004,6 @@ export default function MovingServicePage() {
 
                 <MovingTeamSection />
 
-                <TestimonialsSection />
 
                 <MovingCtaSection />
 

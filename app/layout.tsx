@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
-import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -63,10 +62,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* <CheckoutProvider></CheckoutProvider> */}
         {children}
         <Toaster position="top-right" richColors />
-        <Script
-          src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
-          strategy="lazyOnload"
-        />
       </body>
     </html>
 

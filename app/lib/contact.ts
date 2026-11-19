@@ -16,3 +16,9 @@ export const CONTACT_NUMBERS: ContactNumber[] = [
     href: "tel:+447470025636",
   },
 ];
+
+export const CONTACT_EMAILS: string[] = [
+  "hello@kxhlogistics.co.uk",
+  "support@kxhlogistics.co.uk",
+  "info@kxhlogistics.co.uk",
+];

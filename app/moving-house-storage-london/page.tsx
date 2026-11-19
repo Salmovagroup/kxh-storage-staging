@@ -5,9 +5,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import { londonLocations } from "../lib/location";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
@@ -663,8 +660,6 @@ function HeroSection() {
 
                 <p className="mt-4 text-sm text-slate-500">Tell us what needs collecting, where it is, your preferred date and how long storage may be required.</p>
 
-                <div className="mt-6 flex justify-center"><TrustpilotPill /></div>
-
                 <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
                     <Image src="/images/moving-services/moving-services-hero.webp" alt="KXH moving team collecting household furniture for secure storage in London" width={1400} height={800} priority quality={80} sizes="(max-width: 768px) 100vw, 960px" className="h-auto w-full object-cover" />
                 </div>
@@ -1124,7 +1119,6 @@ export default function MovingStorageLondonPage() {
                 <ServiceJsonLd />
                 <FAQJsonLd />
                 <BreadcrumbJsonLd />
-                <TrustpilotJsonLd />
 
                 <BreadcrumbNavigation />
 
@@ -1162,7 +1156,6 @@ export default function MovingStorageLondonPage() {
 
                 <RelatedServicesSection />
 
-                <TestimonialsSection />
 
                 <FinalCallToActionSection />
 

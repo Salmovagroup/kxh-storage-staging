@@ -6,9 +6,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import { londonLocations } from "../sitemap";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
@@ -1009,10 +1006,6 @@ function HeroSection() {
                     Not sure how many items you have? An estimate is enough to begin.
                 </p>
 
-                <div className="mt-6 flex justify-center">
-                    <TrustpilotPill />
-                </div>
-
                 <div className="mt-12">
                     <Image
                         src="/images/business-storage/business-storage-london-warehouse-inventory.webp"
@@ -1730,10 +1723,6 @@ function RelatedServicesSection() {
     );
 }
 
-function TestimonialsWrapper() {
-    return <TestimonialsSection />;
-}
-
 function FinalCtaSection() {
     return (
         <section className="border-t border-emerald-800 bg-emerald-800 py-14 text-center text-white sm:py-20">
@@ -1833,7 +1822,6 @@ export default function FurnitureStorageLondonPage() {
                 <FAQJsonLd />
                 <BreadcrumbJsonLd />
                 <WebPageJsonLd />
-                <TrustpilotJsonLd />
 
                 <PageBreadcrumb />
                 <HeroSection />
@@ -1858,7 +1846,6 @@ export default function FurnitureStorageLondonPage() {
                 <CustomerFitSection />
                 <LondonCoverageSection />
                 <RelatedServicesSection />
-                <TestimonialsWrapper />
                 <FinalCtaSection />
                 <FaqSection />
 

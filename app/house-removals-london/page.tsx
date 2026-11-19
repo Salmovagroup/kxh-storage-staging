@@ -5,9 +5,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import { londonLocations } from "../lib/location";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
@@ -758,8 +755,6 @@ function HeroSection() {
                     Share both addresses, property access, item volume, preferred date and any packing or storage requirements.
                 </p>
 
-                <div className="mt-6 flex justify-center"><TrustpilotPill /></div>
-
                 <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
                     <Image
                         src="/images/moving-services/moving-services-hero.webp"
@@ -1197,7 +1192,6 @@ export default function HomeRemovalsLondonPage() {
                 <ServiceJsonLd />
                 <FAQJsonLd />
                 <BreadcrumbJsonLd />
-                <TrustpilotJsonLd />
 
                 <BreadcrumbNavigation />
                 <HeroSection />
@@ -1215,7 +1209,6 @@ export default function HomeRemovalsLondonPage() {
                 <ScenariosSection />
                 <LondonCoverageSection />
                 <RelatedGuidesSection />
-                <TestimonialsSection />
                 <FinalCallToActionSection />
                 <FaqsSection />
                 <MainFooter locations={londonLocations} />
