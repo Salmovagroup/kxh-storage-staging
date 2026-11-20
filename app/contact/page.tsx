@@ -5,13 +5,11 @@ import MainFooter from "../components/footer/MainFooter";
 import { londonLocations } from "../sitemap";
 import CrispChat from "../components/chat/CrispChat";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import AreaMapExplorer from "../components/AreaMapExplorer";
 import ContactForm from "../components/ContactForm";
 import type { ReactNode } from "react";
 import { ArrowRight, Boxes, Building2, CheckCircle2, ChevronRight, ClipboardList, Clock, FileText, GraduationCap, Hammer, Home, Layers, Mail, MapPin, Package, Phone, ShoppingCart, Smartphone, Star, Truck, Warehouse, Zap } from "lucide-react";
-import { CONTACT_NUMBERS } from "../lib/contact";
+import { CONTACT_EMAILS, CONTACT_NUMBERS } from "../lib/contact";
 
 const SITE_URL = "https://kxhlogistics.co.uk";
 const PHONE_DISPLAY = CONTACT_NUMBERS[0].phone;
@@ -73,14 +71,14 @@ const contactMethods = [
         label: contact.phone,
         icon: "☎",
     })),
-    {
+    ...CONTACT_EMAILS.map((email) => ({
         title: "Email Our Team",
         description:
             "Ideal for detailed requirements, photos, inventory lists, access notes and business enquiries.",
-        href: `mailto:${EMAIL}`,
-        label: EMAIL,
+        href: `mailto:${email}`,
+        label: email,
         icon: "✉",
-    },
+    })),
     {
         title: "Request a Quote",
         description:
@@ -656,8 +654,10 @@ export default function ContactPage() {
                                         </span>
                                     </a>
                                 ))}
+                                {CONTACT_EMAILS.map((email) => (
                                 <a
-                                    href={`mailto:${EMAIL}`}
+                                    key={email}
+                                    href={`mailto:${email}`}
                                     className="group flex items-center gap-4 rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-emerald-400/60 hover:bg-emerald-500/15"
                                 >
                                     <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white text-emerald-700">
@@ -665,9 +665,10 @@ export default function ContactPage() {
                                     </span>
                                     <span className="min-w-0">
                                         <span className="block text-xs font-bold uppercase tracking-wider text-emerald-300">Email</span>
-                                        <span className="mt-0.5 block truncate text-lg font-black">{EMAIL}</span>
+                                        <span className="mt-0.5 block truncate text-lg font-black">{email}</span>
                                     </span>
                                 </a>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -856,7 +857,6 @@ export default function ContactPage() {
                     </div>
                 </section>
 
-                <TestimonialsSection />
 
                 {/* FAQ */}
                 <section id="faqs" className="bg-white py-16 lg:py-24">

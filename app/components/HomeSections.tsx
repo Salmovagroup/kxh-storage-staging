@@ -23,7 +23,6 @@ import {
     Warehouse,
 } from "lucide-react";
 import AreaMapExplorer from "./AreaMapExplorer";
-import TestimonialsSection from "./TestimonialsSection";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
 type Faq = { q: string; a: string };
@@ -369,7 +368,6 @@ export default function HomeSections({ faqs }: { faqs: Faq[] }) {
                 </div>
             </section>
 
-            <TestimonialsSection />
 
             {/* REAL PHOTOS */}
             <section className="bg-white py-16 lg:py-20">

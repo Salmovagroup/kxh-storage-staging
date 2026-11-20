@@ -7,8 +7,6 @@ import { Warehouse as HIcWarehouse, ScanLine as HIcScanLine, PackageCheck as HIc
 import CrispChat from "@/app/components/chat/CrispChat";
 import MainFooter from "@/app/components/footer/MainFooter";
 import Nav from "@/app/components/MobileNav";
-import TestimonialsSection from "@/app/components/TestimonialsSection";
-import TrustpilotPill from "@/app/components/trustpilot/TrustpilotPill";
 import { londonLocations } from "@/app/lib/location";
 import Link from "next/link";
 import Image from "next/image";
@@ -363,7 +361,6 @@ export default function ThirdPartyLogisticsPage() {
                         </div>
                     </div>
                 </section>
-                <TestimonialsSection />
 
                 <section className="py-16 border-t border-slate-200/70 bg-white">
                     <div className="max-w-screen-xl mx-auto px-4">

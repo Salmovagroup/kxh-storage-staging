@@ -7,8 +7,6 @@ import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
 import Link from "next/link";
 import { londonLocations } from "../lib/location";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
-import TestimonialsSection from "../components/TestimonialsSection";
 import Image from "next/image";
 import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
 import type { Metadata } from "next";
@@ -481,7 +479,6 @@ export default function ShreddingServicePage() {
                         </div>
                     </div>
                 </section>
-                <TestimonialsSection />
 
         {/* FINAL CTA */}
         <section className="py-16 text-center border-t border-slate-200/40 bg-white">

@@ -7,8 +7,6 @@ import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
 import Link from "next/link";
 import { londonLocations } from "../lib/location";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import Image from "next/image";
 import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
 
@@ -456,7 +454,6 @@ export default function WarehouseStoragePage() {
                         </div>
                     </div>
                 </section>
-                <TestimonialsSection />
         {/* CTA */}
         <section className="py-20 text-center bg-slate-50">
           <h2 className="text-3xl font-bold">

@@ -1,8 +1,6 @@
 import CrispChat from "@/app/components/chat/CrispChat";
 import MainFooter from "@/app/components/footer/MainFooter";
 import Nav from "@/app/components/MobileNav";
-import TestimonialsSection from "@/app/components/TestimonialsSection";
-import TrustpilotPill from "@/app/components/trustpilot/TrustpilotPill";
 import { londonLocations } from "@/app/lib/location";
 import Link from "next/link";
 import Image from "next/image";
@@ -1447,7 +1445,6 @@ export default async function LocationServicePage({ params }: PageProps) {
                 <WhyChooseSection service={service} location={location} content={content} />
                 {service === "business-storage-london" && <BusinessIndustrySection location={location} />}
                 <TeamSection location={location} content={content} />
-                <TestimonialsSection />
                 <RelatedServicesSection service={service} location={location} content={content} />
                 <FAQSection location={location} content={content} />
                 <LondonServiceAreasSection service={service} location={location} content={content} />

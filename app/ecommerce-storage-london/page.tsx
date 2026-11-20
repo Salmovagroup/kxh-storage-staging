@@ -8,9 +8,7 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
 import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import { londonLocations } from "../sitemap";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
@@ -1318,7 +1316,6 @@ export default function EcommerceStorageLondonPage() {
                     ctaHref="/get-a-quote?service=storage"
                     ctaLabel="Get an Ecommerce Storage Quote"
                 />
-                <TestimonialsSection />
 
                 {/* FINAL CTA */}
                 <section className="px-4 py-16 sm:px-6 lg:px-8">

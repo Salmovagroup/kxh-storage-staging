@@ -9,9 +9,7 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
 import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import { londonLocations } from "../sitemap";
 import { CONTACT_NUMBERS } from "../lib/contact";
 
@@ -1670,7 +1668,6 @@ export default function PackingServicesLondonPage() {
                     ctaHref="/get-a-quote?service=moving"
                     ctaLabel="Get a Packing Quote"
                 />
-                <TestimonialsSection />
                 <FinalCtaSection />
                 <FaqSection />
 

@@ -2,7 +2,7 @@
  * Business reference used on service pages. It points to the main LocalBusiness
  * entity (defined on the homepage) and uses the same name, phone and profiles.
  * No self-served review rating is included: Google ignores it for LocalBusiness
- * and it must always match the live Google/Trustpilot scores.
+ * and it must always match the live Google scores.
  */
 export default function TrustpilotJsonLd() {
   const data = {
@@ -20,7 +20,6 @@ export default function TrustpilotJsonLd() {
       addressCountry: "GB",
     },
     sameAs: [
-      "https://uk.trustpilot.com/review/kxhlogistics.co.uk",
       "https://www.facebook.com/kxhlogistics",
       "https://www.instagram.com/kxh_logistics",
       "https://www.tiktok.com/@kxhlogistics",

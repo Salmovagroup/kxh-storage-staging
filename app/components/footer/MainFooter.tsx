@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 import SocialLinks from "../SocialLinks";
-import { CONTACT_NUMBERS } from "@/app/lib/contact";
+import { CONTACT_EMAILS, CONTACT_NUMBERS } from "@/app/lib/contact";
 
 type Location = {
   name: string;
@@ -140,12 +140,14 @@ export default function MainFooter({
                   </a>
                 </li>
               ))}
-              <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" aria-hidden="true" />
-                <a href="mailto:help@kxhlogistics.co.uk" className="transition hover:text-white">
-                  help@kxhlogistics.co.uk
-                </a>
-              </li>
+              {CONTACT_EMAILS.map((email) => (
+                <li key={email} className="flex items-start gap-3">
+                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" aria-hidden="true" />
+                  <a href={`mailto:${email}`} className="transition hover:text-white">
+                    {email}
+                  </a>
+                </li>
+              ))}
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" aria-hidden="true" />
                 <span>Open 24 hours, 7 days a week</span>
