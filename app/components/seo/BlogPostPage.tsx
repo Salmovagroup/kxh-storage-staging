@@ -17,6 +17,20 @@ function JsonLd({ data }: { data: object }) {
   );
 }
 
+/** Renders [anchor](/path) markup in blog text as internal links. */
+function renderRich(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\(\/[^)]*\))/g);
+  return parts.map((part, i) => {
+    const m = part.match(/^\[([^\]]+)\]\((\/[^)]*)\)$/);
+    if (!m) return part;
+    return (
+      <Link key={i} href={m[2]} className="font-semibold text-emerald-700 underline-offset-2 hover:underline">
+        {m[1]}
+      </Link>
+    );
+  });
+}
+
 export default function BlogPostPage({ post }: { post: BlogPostData }) {
   const url = `${SITE}/blog/${post.slug}`;
   const article = {
@@ -82,11 +96,11 @@ export default function BlogPostPage({ post }: { post: BlogPostData }) {
             <section key={s.heading} className="mt-10">
               <h2 className="text-2xl font-bold tracking-tight text-slate-950">{s.heading}</h2>
               {s.paragraphs.map((p, i) => (
-                <p key={i} className="mt-4 leading-8 text-slate-700">{p}</p>
+                <p key={i} className="mt-4 leading-8 text-slate-700">{renderRich(p)}</p>
               ))}
               {s.bullets && (
                 <ul className="mt-4 list-disc space-y-2 pl-6 leading-7 text-slate-700">
-                  {s.bullets.map((b) => (<li key={b}>{b}</li>))}
+                  {s.bullets.map((b) => (<li key={b}>{renderRich(b)}</li>))}
                 </ul>
               )}
             </section>
