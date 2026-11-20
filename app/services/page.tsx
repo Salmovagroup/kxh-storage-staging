@@ -30,7 +30,6 @@ import CrispChat from "@/app/components/chat/CrispChat";
 import MainFooter from "@/app/components/footer/MainFooter";
 import Nav from "@/app/components/MobileNav";
 import { londonLocations } from "../sitemap";
-import TestimonialsSection from "../components/TestimonialsSection";
 import ServiceHero from "../components/ServiceHero";
 import ServiceShowcase from "../components/ServiceShowcase";
 import AreaMapExplorer from "../components/AreaMapExplorer";
@@ -527,7 +526,6 @@ export default function ServicesPage() {
                     </div>
                 </section>
 
-                <TestimonialsSection />
 
                 {/* FAQ */}
                 <section id="faqs" className="bg-white py-16 lg:py-24">

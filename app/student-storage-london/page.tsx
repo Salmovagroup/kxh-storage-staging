@@ -8,8 +8,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import Nav from "../components/MobileNav";
 import MainFooter from "../components/footer/MainFooter";
-import TestimonialsSection from "../components/TestimonialsSection";
-import TrustpilotPill from "../components/trustpilot/TrustpilotPill";
 import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
 import { londonLocations } from "../lib/location";
 import Image from "next/image";
@@ -589,7 +587,6 @@ export default function StudentStoragePage() {
                     ctaHref="/get-a-quote?service=storage"
                     ctaLabel="Get a Student Storage Quote"
                 />
-                <TestimonialsSection />
 
                 <section className="py-20 text-center bg-slate-50 border-t border-slate-200/70">
                     <div className="max-w-3xl mx-auto px-4">

@@ -5,7 +5,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
 import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
 import ServiceHero from "../components/ServiceHero";
 import AreaMapExplorer from "../components/AreaMapExplorer";
@@ -1938,7 +1937,6 @@ export default function MovingServicePage() {
 
                 <MovingTeamSection />
 
-                <TestimonialsSection />
 
                 <MovingCtaSection />
 

@@ -15,6 +15,8 @@ import {
 import LogoutButton from "./LogoutButton";
 import AdminMobileNav from "./AdminMobileNav";
 
+export const metadata = { robots: { index: false, follow: false } };
+
 
 function AdminNav() {
   const links = [

@@ -30,7 +30,6 @@ import Link from "next/link";
 import CrispChat from "../components/chat/CrispChat";
 import MainFooter from "../components/footer/MainFooter";
 import Nav from "../components/MobileNav";
-import TestimonialsSection from "../components/TestimonialsSection";
 import TrustpilotJsonLd from "../components/seo/TrustPilotJsonLD";
 import ServiceHero from "../components/ServiceHero";
 import AreaMapExplorer from "../components/AreaMapExplorer";
@@ -904,7 +903,6 @@ export default function BusinessStoragePage() {
           </div>
         </section>
 
-        <TestimonialsSection />
 
         {/* FINAL CTA */}
         <section className="px-4 py-16 sm:px-6 lg:px-8">

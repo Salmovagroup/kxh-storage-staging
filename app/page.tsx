@@ -99,7 +99,6 @@ function JsonLd() {
         ],
 
         sameAs: [
-            "https://uk.trustpilot.com/review/kxhlogistics.co.uk",
             "https://www.facebook.com/kxhlogistics",
             "https://www.instagram.com/kxh_logistics",
             "https://www.tiktok.com/@kxhlogistics",
